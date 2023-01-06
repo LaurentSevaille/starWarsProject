@@ -16,11 +16,47 @@ public class MainWebController {
 
     @Autowired
     private CommentsRepositoryInterface commentsRepositoryInterface;
+    @Autowired
+    private ArticleRepositoryInterface articleRepositoryInterface;
+    @Autowired
+    private ArticleSectionRepositoryInterface articleSectionRepositoryInterface;
+
+//POST
 
     @PostMapping("/addcomments")
     public String addcomments(@RequestBody Comments comment) {
         commentsRepositoryInterface.save(comment);
         return "OK";
+    }
+    @PostMapping("/addArticle")
+    public String addArticle(@RequestBody Article article) {
+        articleRepositoryInterface.save(article);
+        return "OK";
+    }
+
+    @GetMapping("/addArticleSection")
+    public String addArticleSection(){
+        Article article = new Article("nouvel article avec contenu", "nouveau footer");
+        ArticleSection articleSection = new ArticleSection("contenu de la section de l'article");
+        article.setArticleSection(articleSection);
+        articleRepositoryInterface.save(article);
+        System.out.println(article);
+        return "OK";
+    }
+
+
+//GET
+
+    @GetMapping("/AddArticle")
+    public String addArticle(){
+        Article article = new Article("nom de l'article", "footer de l'article");
+        articleRepositoryInterface.save(article);
+        return "OK";
+    }
+
+    @GetMapping("/viewArticle")
+    public List<Article> viewArticle(){
+        return articleRepositoryInterface.findAll();
     }
 
     @GetMapping("/viewcomments")

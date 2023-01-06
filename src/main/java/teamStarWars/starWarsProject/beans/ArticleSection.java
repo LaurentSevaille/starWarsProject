@@ -1,0 +1,48 @@
+package teamStarWars.starWarsProject.beans;
+
+import jakarta.persistence.*;
+
+@Entity
+public class ArticleSection {
+
+//ATTRIBUTES
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    int iD;
+    String content;
+
+
+
+//CONSTRUCTORS
+    public ArticleSection() {
+    }
+
+    public ArticleSection(String content) {
+        this.content = content;
+    }
+
+
+//GETTERS AND SETTERS
+    public int getiD() {
+        return iD;
+    }
+    public void setiD(int iD) {
+        this.iD = iD;
+    }
+    public String getContent() {
+        return content;
+    }
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+
+    //OVERRIDE
+    @Override
+    public String toString() {
+        return "ArticleSection{" +
+                "iD=" + iD +
+                ", content='" + content + '\'' +
+                '}';
+    }
+}
