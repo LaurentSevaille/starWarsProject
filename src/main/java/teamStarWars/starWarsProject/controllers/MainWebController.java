@@ -37,7 +37,7 @@ public class MainWebController {
     @GetMapping("/addArticleSection")
     public String addArticleSection(){
         Article article = new Article("nouvel article avec contenu", "nouveau footer");
-        ArticleSection articleSection = new ArticleSection("contenu de la section de l'article");
+        ArticleSection articleSection = new ArticleSection("p", "contenu de la section de l'article");
         article.setArticleSection(articleSection);
         articleRepositoryInterface.save(article);
         System.out.println(article);

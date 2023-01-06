@@ -9,6 +9,7 @@ public class ArticleSection {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int iD;
+    String balise;
     String content;
 
 
@@ -17,7 +18,8 @@ public class ArticleSection {
     public ArticleSection() {
     }
 
-    public ArticleSection(String content) {
+    public ArticleSection(String balise, String content) {
+        this.balise = balise;
         this.content = content;
     }
 
@@ -28,6 +30,12 @@ public class ArticleSection {
     }
     public void setiD(int iD) {
         this.iD = iD;
+    }
+    public String getBalise() {
+        return balise;
+    }
+    public void setBalise(String balise) {
+        this.balise = balise;
     }
     public String getContent() {
         return content;
