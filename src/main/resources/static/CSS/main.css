@@ -1,0 +1,23 @@
+body
+{
+    color: rgb(238, 219, 0);
+    background-image: url('../img/background.jpg');
+}
+
+
+
+a
+{
+ color: rgb(238, 219, 0);
+}
+
+a:visited
+{
+ color: rgb(144, 132, 0);
+}
+
+.center 
+{
+    margin-left: auto;
+    margin-right: auto;
+}
