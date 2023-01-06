@@ -1,0 +1,23 @@
+.container {
+    max-width: none;
+    width: 80%;
+    background-color: white;
+}
+
+.quote{
+    padding-left: 3rem;
+}
+
+.portable-infobox{
+    width: 250px;
+    float: right;
+    margin: 0 0 18px 18px;
+}
+
+.portable-infobox img{
+    width: 250px;
+}
+
+.infobox-title{
+    text-align: center;
+}
