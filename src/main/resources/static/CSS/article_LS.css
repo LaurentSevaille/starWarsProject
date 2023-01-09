@@ -1,6 +1,9 @@
 body{
-    background-color: #ccad85;
-    background-image: url("../IMG/background.jpg");
+    background-color: #C1BCAF;
+    background-image: url("../IMG/background_tattoine.jpg"), url("../IMG/background_header.jpg") ;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-y: bottom, top;
 }
 
 .container {
@@ -33,7 +36,7 @@ padding: 20px;
     height: auto;
 }
 
-#illustration_min {
+.illustration_min {
     width: 50px;
     height: auto;
 }
@@ -65,7 +68,7 @@ padding: 20px;
     padding: 30px;
     margin-left: 3em;
     border: 1px rgba(112, 107, 105, 0.89) solid;
-    width: 40%;
+    width: 40%; 
 }
 
 #navigation .nav-link{

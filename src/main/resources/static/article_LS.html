@@ -14,7 +14,7 @@
 <body>
 
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
+        <nav class="navbar navbar-expand-lg justify-content-between bg-primary:">
             <div class="container-fluid">
                 <a class="navbar-brand">Project Star Wars</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -42,7 +42,7 @@
                         <nav class="d-flex">
                             <input class="form-control mr-sm-2 basicAutoComplete" id="searchbar" type="search"
                                 placeholder="Search" aria-label="Search" autocomplete="off">
-                            <button class="btn btn-sm btn-outline-secondary" type="submit">Search</button>
+                            <button class="btn btn-dark" type="submit">Search</button>
                         </nav>
                     </form>
                 </div>
@@ -50,6 +50,10 @@
         </nav>
 
     </header>
+
+    <div id="article_header">
+        <br><br>
+    </div>
 
     <div class="container" id="article">
         <h1 id="page-title">Luke Skywalker</h1>
@@ -96,8 +100,8 @@
                 <section>
                     <h4 class="infobox-title">Affiliation(s)</h4>
                     <div id="icon_infobox">
-                        <img src="IMG/Rebellion.svg" alt="Rebellion" id="illustration_min" title="Rebellion">
-                        <img src="IMG/Jedi_symbol.svg" alt="Jedi" id="illustration_min" title="Jedi Order">
+                        <img src="IMG/Rebellion.svg" alt="Rebellion" class="illustration_min" title="Rebellion">
+                        <img src="IMG/Jedi_symbol.svg" alt="Jedi" class="illustration_min" title="Jedi Order">
                     </div>
                 </section>
 
@@ -877,9 +881,8 @@
 
             <h3 id="a3l3">Other abilities</h3>
             <figure>
-                <img src="./IMG/ls_xwing.jpg" alt="Luke's X-Wing" class="content_img"
-                    title="Luke's X-Wing">
-                <figcaption>Skywalker, whose father was considered the best <br> 
+                <img src="./IMG/ls_xwing.jpg" alt="Luke's X-Wing" class="content_img" title="Luke's X-Wing">
+                <figcaption>Skywalker, whose father was considered the best <br>
                     pilot in the galaxy, flew the X-wing starfighter <br> that destroyed the Death Star.
                 </figcaption>
             </figure>
