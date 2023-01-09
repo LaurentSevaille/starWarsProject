@@ -20,6 +20,8 @@ public class MainWebController {
     private ArticleRepositoryInterface articleRepositoryInterface;
     @Autowired
     private ArticleSectionRepositoryInterface articleSectionRepositoryInterface;
+    @Autowired
+    private UserRepositoryInterface userRepositoryInterface;
 
 //POST
 
@@ -75,5 +77,14 @@ public class MainWebController {
         return newHtmlLine;
 
     }
+
+
+    @PostMapping("/getSessionValues/{username}/{password}")
+    public User getSessionValues(@PathVariable("username") String username, @PathVariable("password") String password)
+    {
+        User user = userRepositoryInterface.findByUsername(username);
+        return user;
+    }
+
 
 }
