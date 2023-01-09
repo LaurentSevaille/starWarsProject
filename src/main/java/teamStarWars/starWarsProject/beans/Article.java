@@ -2,6 +2,7 @@ package teamStarWars.starWarsProject.beans;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -14,7 +15,7 @@ public class Article {
     private String name;
     private String content;
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private List<Comment> commentList;
+    private List<Comment> commentList = new ArrayList<>();
 
     //METHODS
 

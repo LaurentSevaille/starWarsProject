@@ -24,6 +24,16 @@ public class MainWebController {
 //POST
 
     @GetMapping("/addComment/{articleName}")
+    public String addcoment(@PathVariable("articleName") String articleName){
+        Article articleMulti = articleRepositoryInterface.findByName(articleName);
+        Comment comment1 = new Comment("sdjhb","ljhg");
+        articleMulti.addCommentToArticle(comment1);
+        System.out.println(articleMulti);
+        articleRepositoryInterface.save(articleMulti);
+        return "OK";
+    }
+    /*
+    @GetMapping("/addComment/{articleName}")
     public String addcomments(@RequestBody Comment comment, @PathVariable("articleName") String articleName) {
 
         Article article = articleRepositoryInterface.findByName(articleName);
@@ -31,7 +41,7 @@ public class MainWebController {
         articleRepositoryInterface.save(article);
         System.out.println(article);
         return "OK";
-    }
+    }*/
 
 
     @PostMapping("/addArticle")
@@ -71,7 +81,7 @@ public class MainWebController {
         return newHtmlLine;
 
     }
-
+*/
 
     @PostMapping("/getSessionValues/{username}/{password}")
     public User getSessionValues(@PathVariable("username") String username, @PathVariable("password") String password)
