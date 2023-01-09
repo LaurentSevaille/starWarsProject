@@ -65,7 +65,7 @@ public class MainWebController {
 
         String content = comment.getContent();
         String name = comment.getName();
-        String author = comment.getAuthor();
+        String author = comment.getAuthor().getUsername();
         String balise = comment.getBalise();
         String newHtmlLine = "";
         newHtmlLine += "<" + balise + ">" + author + "</" + balise + ">" +

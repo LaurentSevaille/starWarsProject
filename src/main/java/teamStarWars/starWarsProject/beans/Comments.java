@@ -1,9 +1,6 @@
 package teamStarWars.starWarsProject.beans;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Comments {
@@ -15,7 +12,8 @@ public class Comments {
     private String balise;
     private String name;
     private String content;
-    private String author;
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private User author;
 
 
     //CONSTRUCTORS
@@ -23,7 +21,7 @@ public class Comments {
     public Comments() {
     }
 
-    public Comments(String name, String balise, String content, String author) {
+    public Comments(String name, String balise, String content, User author) {
         this.name = name;
         this.balise = balise;
         this.content = content;
@@ -63,11 +61,11 @@ public class Comments {
         this.content = content;
     }
 
-    public String getAuthor() {
+    public User getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
+    public void setAuthor(User author) {
         this.author = author;
     }
 
