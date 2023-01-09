@@ -16,11 +16,49 @@ public class MainWebController {
 
     @Autowired
     private CommentsRepositoryInterface commentsRepositoryInterface;
+    @Autowired
+    private ArticleRepositoryInterface articleRepositoryInterface;
+    @Autowired
+    private ArticleSectionRepositoryInterface articleSectionRepositoryInterface;
+    @Autowired
+    private UserRepositoryInterface userRepositoryInterface;
+
+//POST
 
     @PostMapping("/addcomments")
     public String addcomments(@RequestBody Comments comment) {
         commentsRepositoryInterface.save(comment);
         return "OK";
+    }
+    @PostMapping("/addArticle")
+    public String addArticle(@RequestBody Article article) {
+        articleRepositoryInterface.save(article);
+        return "OK";
+    }
+
+    @GetMapping("/addArticleSection")
+    public String addArticleSection(){
+        Article article = new Article("nouvel article avec contenu", "nouveau footer");
+        ArticleSection articleSection = new ArticleSection("p", "contenu de la section de l'article");
+        article.setArticleSection(articleSection);
+        articleRepositoryInterface.save(article);
+        System.out.println(article);
+        return "OK";
+    }
+
+
+//GET
+
+    @GetMapping("/AddArticle")
+    public String addArticle(){
+        Article article = new Article("nom de l'article", "footer de l'article");
+        articleRepositoryInterface.save(article);
+        return "OK";
+    }
+
+    @GetMapping("/viewArticle")
+    public List<Article> viewArticle(){
+        return articleRepositoryInterface.findAll();
     }
 
     @GetMapping("/viewcomments")
@@ -29,7 +67,7 @@ public class MainWebController {
 
         String content = comment.getContent();
         String name = comment.getName();
-        String author = comment.getAuthor();
+        String author = comment.getAuthor().getUsername();
         String balise = comment.getBalise();
         String newHtmlLine = "";
         newHtmlLine += "<" + balise + ">" + author + "</" + balise + ">" +
@@ -39,5 +77,14 @@ public class MainWebController {
         return newHtmlLine;
 
     }
+
+
+    @PostMapping("/getSessionValues/{username}/{password}")
+    public User getSessionValues(@PathVariable("username") String username, @PathVariable("password") String password)
+    {
+        User user = userRepositoryInterface.findByUsername(username);
+        return user;
+    }
+
 
 }
