@@ -1,7 +1,21 @@
+body{
+    background-color: #C1BCAF;
+    background-image: url("../IMG/background_tattoine.jpg"), url("../IMG/background_header.jpg") ;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-y: bottom, top;
+}
+
 .container {
     max-width: none;
-    width: 80%;
+    width: 70%;
     background-color: white;
+    text-align: justify;
+}
+
+#page-title{
+text-align: center;
+padding: 20px;
 }
 
 .quote{
@@ -12,12 +26,97 @@
     width: 250px;
     float: right;
     margin: 0 0 18px 18px;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: #f3f0ec;
 }
 
-.portable-infobox img{
-    width: 250px;
+#illustration_maj {
+    width: 230px;
+    height: auto;
+}
+
+.illustration_min {
+    width: 50px;
+    height: auto;
+}
+
+#icon_infobox {
+    display: flex;
+    justify-content: center;
+}
+
+#img_infobox {
+    display: flex;
+    justify-content: center;
 }
 
 .infobox-title{
     text-align: center;
+    font-size: large;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #ccad85;
+}
+
+.infobox-name{
+    text-align: center;
+    font-size: x-large;
+}
+
+#navigation {
+    padding: 30px;
+    margin-left: 3em;
+    border: 1px rgba(112, 107, 105, 0.89) solid;
+    width: 40%; 
+}
+
+#navigation .nav-link{
+    color: black;
+}
+
+#navigation a{
+    color: black;
+    text-decoration: none;
+}
+
+button {
+    float: right;
+    width: 80px;
+}
+
+#button_title{
+    color: black;
+}
+
+#title_menu{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+h2{
+    padding: 1em;
+    margin: 15px;
+}
+
+h3{
+    margin: 25px;
+}
+
+h4{
+    margin: 15px;
+}
+
+figure{
+    float: right;
+    padding: 25px;
+    text-align: center;
+    font-style: italic;
+    font-size: smaller;
+    margin: 0.5em;
+}
+
+.content_img{
+    width: 300px;
+    height: auto;
 }
