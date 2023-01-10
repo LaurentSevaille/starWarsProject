@@ -1,23 +1,25 @@
 body
 {
-    color: rgb(238, 219, 0);
-    background-image: url('../img/background.jpg');
+    color: #1f1d1d;
+    background-image: url('../img/background_falcon.jpg');
 }
-
-
 
 a
 {
- color: rgb(238, 219, 0);
+ color: #2b2828;
 }
 
 a:visited
 {
- color: rgb(144, 132, 0);
+ color: #564A49;
 }
 
-.center 
-{
-    margin-left: auto;
-    margin-right: auto;
+a:hover{
+    color: #93B8BA;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }

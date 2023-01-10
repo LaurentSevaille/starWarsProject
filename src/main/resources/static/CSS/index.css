@@ -1,5 +1,3 @@
-
-
 #carousel_characters
 {
     width : 150px; 
@@ -22,8 +20,8 @@
 
 #carousel_factions
 {
-    width : 150px; 
-    height: 150px;
+    width : 250px; 
+    height: 250px;
 }
 
 .container_nav
@@ -69,6 +67,3 @@
 {
     bottom: -2em;
 }
-
-
-
