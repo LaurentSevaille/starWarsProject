@@ -3,7 +3,6 @@ if(sessionStorage.username == null)
     $('#POSTBUTTON').click(function()
     {
         let values = {username: $("#username").val(), password: $("#password").val()};
-        console.log(JSON.stringify(values));
         $.ajax(
             {
                 type: "POST",
@@ -21,8 +20,14 @@ if(sessionStorage.username == null)
                         (
                             "<p>username : "+sessionStorage.username+"</p>" +
                             "<p>password : "+response["password"]+"</p>" +
-                            "<p>permission : "+sessionStorage.permission+"</p>"
+                            "<p>permission : "+sessionStorage.permission+"</p>" +
+                            "<p>Success ! You will be redirected to the main page</p>"
                         );
+
+                        setTimeout(function()
+                        {
+                            window.location.href = "index.html";
+                        },3000);
                     }
     
                     else
@@ -43,7 +48,12 @@ else
     $('#loginMenu').hide();
     $('#result').html
     (
-        "<p>You are already connected</p>"
+        "<p>You are already connected. Redirecting to main page.</p>"
     );
+
+    setTimeout(function()
+    {
+        window.location.href = "index.html";
+    },3000);
 }
 

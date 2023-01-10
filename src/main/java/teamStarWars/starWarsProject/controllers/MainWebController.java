@@ -63,5 +63,20 @@ public class MainWebController {
         return user;
     }
 
+    @PostMapping("/registerUser/{username}/{password}/{address}")
+    public String registerUser(@PathVariable("username") String username, @PathVariable("password") String password, @PathVariable("address") String address)
+    {
+        User user = new User(username,password,address,2);
+        userRepositoryInterface.save(user);
 
+        try
+        {
+            userRepositoryInterface.save(user);
+            return "OK";
+        }
+        catch(Exception e ){
+            System.out.println("Erreur d'index");
+            return "not OK";
+        }
+    }
 }

@@ -19,7 +19,7 @@ public class User
     public User() {
     }
 
-    public User(String username, String address, String password, int permission) {
+    public User(String username, String password, String address , int permission) {
         this.username = username;
         this.address = address;
         this.password = password;
