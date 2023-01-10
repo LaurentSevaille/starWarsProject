@@ -13,6 +13,7 @@ public class Article {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int iD;
     private String name;
+    @Column(columnDefinition = "LONGTEXT")
     private String content;
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Comment> commentList = new ArrayList<>();

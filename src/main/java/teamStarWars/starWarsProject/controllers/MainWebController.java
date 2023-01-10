@@ -21,27 +21,6 @@ public class MainWebController {
     @Autowired
     private UserRepositoryInterface userRepositoryInterface;
 
-//POST
-
-    @GetMapping("/addComment/{articleName}")
-    public String addcoment(@PathVariable("articleName") String articleName){
-        Article articleMulti = articleRepositoryInterface.findByName(articleName);
-        Comment comment1 = new Comment("sdjhb","ljhg");
-        articleMulti.addCommentToArticle(comment1);
-        System.out.println(articleMulti);
-        articleRepositoryInterface.save(articleMulti);
-        return "OK";
-    }
-    /*
-    @GetMapping("/addComment/{articleName}")
-    public String addcomments(@RequestBody Comment comment, @PathVariable("articleName") String articleName) {
-
-        Article article = articleRepositoryInterface.findByName(articleName);
-        article.addCommentToArticle(comment);
-        articleRepositoryInterface.save(article);
-        System.out.println(article);
-        return "OK";
-    }*/
 
 
     @PostMapping("/addArticle")
@@ -49,7 +28,6 @@ public class MainWebController {
         articleRepositoryInterface.save(article);
         return "OK";
     }
-
 
     @GetMapping("/viewArticle/{articleName}")
     public String viewArticle(@PathVariable("articleName") String articleName){
@@ -60,28 +38,23 @@ public class MainWebController {
 
     @GetMapping("/viewComment/{articleName}")
     public List<Comment> viewcomment(@PathVariable("articleName") String articleName){
-        List<Comment> comment = articleRepositoryInterface.findByName(articleName).getCommentList();
-        return comment;
+        List<Comment> comments = articleRepositoryInterface.findByName(articleName).getCommentList();
+        return comments;
     }
 /*
-    @PostMapping("/addComments/{articleName}")
-    public String addComment(@RequestBody Comment comment, @PathVariable("articleName") String articleName){
-        Comment comment = commentsRepositoryInterface.findById(1);
-
-        String name = comment.getAuthor();
-        String content = comment.getContent();
-        String name = comment.getName();
-        String author = comment.getAuthor().getUsername();
-        String balise = comment.getBalise();
-        String newHtmlLine = "";
-        newHtmlLine += "<" + balise + ">" + author + "</" + balise + ">" +
-                "<" + balise + ">" + name + "</" + balise + ">" +
-                "<" + balise + ">" + content + "</" + balise + ">";
-
-        return newHtmlLine;
-
+    @PostMapping("/addComment")
+    public String addComment(@RequestBody Comment comment) {
+        commentsRepositoryInterface.save(comment);
+        return "OK";
     }
 */
+    @PostMapping("/addComment/{articleName}")
+    public String addComment(@PathVariable("articleName")String articleName, @RequestBody Comment comment) {
+        Article article = articleRepositoryInterface.findByName(articleName);
+        article.addCommentToArticle(comment);
+        articleRepositoryInterface.save(article);
+        return "Thank you for your comment!";
+    }
 
     @PostMapping("/getSessionValues/{username}/{password}")
     public User getSessionValues(@PathVariable("username") String username, @PathVariable("password") String password)
