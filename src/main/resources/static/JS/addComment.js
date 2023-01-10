@@ -1,4 +1,4 @@
-
+/*
 var articleName = $("title").text();
 //console.log(JSON.stringify(articleName));
 
@@ -10,7 +10,7 @@ $.ajax({
         $("#corpsDeArticle").html(reponse);
     }
 });
-
+*/
 $.ajax({
     type: "GET",
     url: "http://localhost:8080/API/viewComment/" + articleName,
@@ -29,7 +29,7 @@ $.ajax({
     }
 });
 
-
+/*
 $("#commentValidationButton").click(function () {
     var valeurs = {
         author: $("#authorName").val(),
@@ -49,6 +49,8 @@ $("#commentValidationButton").click(function () {
         }
     });
 });
+*/
+
 $("#validationButton").click(function () {
     var valeurs = {
         author: $("#authorName").val(),
