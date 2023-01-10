@@ -1,6 +1,19 @@
 var articleName = $("title").text();
 //console.log(JSON.stringify(articleName));
 
+
+
+function myFunction() {
+    var x = document.getElementById("menu");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+      $("#button_title").html("Hide");
+    } else {
+      x.style.display = "none";
+      $("#button_title").html("Show");
+    }
+}
+
 //Get the article content from the database and insert it in the artileCorps balise
 $.ajax({
     type: "GET",
@@ -47,14 +60,3 @@ $("#validationButton").click(function () {
         }
     });
 });
-
-function myFunction() {
-    var x = document.getElementById("menu");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-      $("#button_title").html("Hide");
-    } else {
-      x.style.display = "none";
-      $("#button_title").html("Show");
-    }
-}

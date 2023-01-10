@@ -12,6 +12,7 @@ public class Article {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int iD;
+    @Column(unique=true)
     private String name;
     @Column(columnDefinition = "LONGTEXT")
     private String content;
