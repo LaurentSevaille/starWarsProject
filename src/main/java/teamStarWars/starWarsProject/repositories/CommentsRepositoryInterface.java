@@ -1,10 +1,10 @@
 package teamStarWars.starWarsProject.repositories;
 
 import org.springframework.data.jpa.repository.support.JpaRepositoryImplementation;
-import teamStarWars.starWarsProject.beans.Comments;
+import teamStarWars.starWarsProject.beans.Comment;
 
-public interface CommentsRepositoryInterface extends JpaRepositoryImplementation <Comments, Integer> {
+public interface CommentsRepositoryInterface extends JpaRepositoryImplementation <Comment, Integer> {
 
-    Comments findById(int id);
+    Comment findById(int id);
 
 }

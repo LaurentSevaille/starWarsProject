@@ -2,6 +2,9 @@ package teamStarWars.starWarsProject.beans;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 public class Article {
 
@@ -10,22 +13,30 @@ public class Article {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int iD;
     private String name;
-    @OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-    private ArticleSection articleSection;
-    private String footer;
+    @Column(columnDefinition = "LONGTEXT")
+    private String content;
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<Comment> commentList = new ArrayList<>();
 
+    //METHODS
 
-    //CONSTRUCTORS
+    public void addCommentToArticle(Comment comment){
+        commentList.add(comment);
+    }
+
+//CONSTRUCTORS
 
     public Article() {
     }
 
-    public Article(String name, String footer) {
+    public Article(String name, String content) {
         this.name = name;
-        this.footer = footer;
+        this.content = content;
     }
-    //GETTERS AND SETTERS
 
+
+
+//GETTERS AND SETTERS
     public int getiD() {
         return iD;
     }
@@ -38,29 +49,28 @@ public class Article {
     public void setName(String name) {
         this.name = name;
     }
-    public ArticleSection getArticleSection() {
-        return articleSection;
+    public String getContent() {
+        return content;
     }
-    public void setArticleSection(ArticleSection articleSection) {
-        this.articleSection = articleSection;
+    public void setContent(String content) {
+        this.content = content;
     }
-    public String getFooter() {
-        return footer;
+    public List<Comment> getCommentList() {
+        return commentList;
     }
-    public void setFooter(String footer) {
-        this.footer = footer;
+    public void setCommentList(List<Comment> commentList) {
+        this.commentList = commentList;
     }
 
 
     //OVERRIDE
-
-
     @Override
     public String toString() {
         return "Article{" +
-                "ID=" + iD +
+                "iD=" + iD +
                 ", name='" + name + '\'' +
-                ", footer='" + footer + '\'' +
+                ", content='" + content + '\'' +
+                ", commentsList=" + commentList +
                 '}';
     }
 }

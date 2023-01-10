@@ -19,65 +19,42 @@ public class MainWebController {
     @Autowired
     private ArticleRepositoryInterface articleRepositoryInterface;
     @Autowired
-    private ArticleSectionRepositoryInterface articleSectionRepositoryInterface;
-    @Autowired
     private UserRepositoryInterface userRepositoryInterface;
 
-//POST
 
-    @PostMapping("/addcomments")
-    public String addcomments(@RequestBody Comments comment) {
-        commentsRepositoryInterface.save(comment);
-        return "OK";
-    }
+
     @PostMapping("/addArticle")
     public String addArticle(@RequestBody Article article) {
         articleRepositoryInterface.save(article);
         return "OK";
     }
 
-    @GetMapping("/addArticleSection")
-    public String addArticleSection(){
-        Article article = new Article("nouvel article avec contenu", "nouveau footer");
-        ArticleSection articleSection = new ArticleSection("p", "contenu de la section de l'article");
-        article.setArticleSection(articleSection);
-        articleRepositoryInterface.save(article);
-        System.out.println(article);
+    @GetMapping("/viewArticle/{articleName}")
+    public String viewArticle(@PathVariable("articleName") String articleName){
+        Article article = articleRepositoryInterface.findByName(articleName);
+        String content = article.getContent();
+        return content;
+    }
+
+    @GetMapping("/viewComment/{articleName}")
+    public List<Comment> viewcomment(@PathVariable("articleName") String articleName){
+        List<Comment> comments = articleRepositoryInterface.findByName(articleName).getCommentList();
+        return comments;
+    }
+/*
+    @PostMapping("/addComment")
+    public String addComment(@RequestBody Comment comment) {
+        commentsRepositoryInterface.save(comment);
         return "OK";
     }
-
-
-//GET
-
-    @GetMapping("/AddArticle")
-    public String addArticle(){
-        Article article = new Article("nom de l'article", "footer de l'article");
+*/
+    @PostMapping("/addComment/{articleName}")
+    public String addComment(@PathVariable("articleName")String articleName, @RequestBody Comment comment) {
+        Article article = articleRepositoryInterface.findByName(articleName);
+        article.addCommentToArticle(comment);
         articleRepositoryInterface.save(article);
-        return "OK";
+        return "Thank you for your comment!";
     }
-
-    @GetMapping("/viewArticle")
-    public List<Article> viewArticle(){
-        return articleRepositoryInterface.findAll();
-    }
-
-    @GetMapping("/viewcomments")
-    public String comments() {
-        Comments comment = commentsRepositoryInterface.findById(1);
-
-        String content = comment.getContent();
-        String name = comment.getName();
-        String author = comment.getAuthor().getUsername();
-        String balise = comment.getBalise();
-        String newHtmlLine = "";
-        newHtmlLine += "<" + balise + ">" + author + "</" + balise + ">" +
-                "<" + balise + ">" + name + "</" + balise + ">" +
-                "<" + balise + ">" + content + "</" + balise + ">";
-
-        return newHtmlLine;
-
-    }
-
 
     @PostMapping("/getSessionValues/{username}/{password}")
     public User getSessionValues(@PathVariable("username") String username, @PathVariable("password") String password)
@@ -86,5 +63,20 @@ public class MainWebController {
         return user;
     }
 
+    @PostMapping("/registerUser/{username}/{password}/{address}")
+    public String registerUser(@PathVariable("username") String username, @PathVariable("password") String password, @PathVariable("address") String address)
+    {
+        User user = new User(username,password,address,2);
+        userRepositoryInterface.save(user);
 
+        try
+        {
+            userRepositoryInterface.save(user);
+            return "OK";
+        }
+        catch(Exception e ){
+            System.out.println("Erreur d'index");
+            return "not OK";
+        }
+    }
 }

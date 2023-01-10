@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="CSS/article_LS.css" />
     <link rel="stylesheet" href="CSS/log.css" />
     <link rel="icon" type="image/png" href="img/Star-Wars-Logo.png" />
-    <title>Log in</title>
+    <title>Register</title>
 </head>
 
 <body>
@@ -54,9 +54,11 @@
 
 
     <div class="container" id="article">
-        <div id=loginMenu>
+        <div id=registerMenu>
             <span>Username : <input type="text" id="username" placeholder="username"></span><br>
+            <span>E-mail address : <input type="text" id="email" placeholder="e-mail"></span><br>
             <span>Password : <input type="password" id="password" placeholder="password"></span><br>
+            <span id = spanconfirm1>Confirm password : </span><input type="password" id="confirmpassword" placeholder="confirm password"><span id = spanconfirm2></span><br>
             <button id="POSTBUTTON"><span id="spanPOSTBUTTON" >Send POST request</span></button>
             
         </div>
@@ -78,7 +80,7 @@
         src="https://cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.3.7/dist/latest/bootstrap-autocomplete.min.js"></script>
 
     <script src=' http://code.jquery.com/jquery.min.js '></script>
-    <script type="text/javascript" src="JS/login.js"></script>
+    <script type="text/javascript" src="JS/register.js"></script>
 </body>
 
 </html>

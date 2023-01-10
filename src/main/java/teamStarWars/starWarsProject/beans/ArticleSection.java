@@ -2,7 +2,7 @@ package teamStarWars.starWarsProject.beans;
 
 import jakarta.persistence.*;
 
-@Entity
+//@Entity
 public class ArticleSection {
 
 //ATTRIBUTES
@@ -11,7 +11,6 @@ public class ArticleSection {
     int iD;
     String balise;
     String content;
-
 
 
 //CONSTRUCTORS

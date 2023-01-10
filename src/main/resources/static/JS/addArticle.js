@@ -1,7 +1,7 @@
 $('#validationButton').click(function () {
     let valeurs = {
         name: $("#name").val(),
-        footer: $("#footer").val(),
+        content: $("#content").val()
     };
     console.log(JSON.stringify(valeurs));
 
