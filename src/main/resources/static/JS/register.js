@@ -41,7 +41,7 @@ if(sessionStorage.username == null)
         {
             $('#spanconfirm1').css("color", "red");
             $('#spanconfirm2').css("color", "red");
-            $('#spanconfirm2').html("password do not match.");
+            $('#spanconfirm2').html("Password do not match.");
             
         }
     })  
