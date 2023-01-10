@@ -1,6 +1,12 @@
-body{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif, Arial, Helvetica;
+}
+
+body {
     background-color: #C1BCAF;
-    background-image: url("../IMG/background_tattoine.jpg"), url("../IMG/background_header.jpg") ;
+    background-image: url("../IMG/background_tattoine.jpg"), url("../IMG/background_header.jpg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position-y: bottom, top;
@@ -13,16 +19,16 @@ body{
     text-align: justify;
 }
 
-#page-title{
-text-align: center;
-padding: 20px;
+#page-title {
+    text-align: center;
+    padding: 20px;
 }
 
-.quote{
+.quote {
     padding-left: 3rem;
 }
 
-.portable-infobox{
+.portable-infobox {
     width: 250px;
     float: right;
     margin: 0 0 18px 18px;
@@ -51,7 +57,7 @@ padding: 20px;
     justify-content: center;
 }
 
-.infobox-title{
+.infobox-title {
     text-align: center;
     font-size: large;
     padding-top: 15px;
@@ -59,7 +65,7 @@ padding: 20px;
     background-color: #ccad85;
 }
 
-.infobox-name{
+.infobox-name {
     text-align: center;
     font-size: x-large;
 }
@@ -68,14 +74,14 @@ padding: 20px;
     padding: 30px;
     margin-left: 3em;
     border: 1px rgba(112, 107, 105, 0.89) solid;
-    width: 40%; 
+    width: 40%;
 }
 
-#navigation .nav-link{
+#navigation .nav-link {
     color: black;
 }
 
-#navigation a{
+#navigation a {
     color: black;
     text-decoration: none;
 }
@@ -85,29 +91,29 @@ button {
     width: 80px;
 }
 
-#button_title{
+#button_title {
     color: black;
 }
 
-#title_menu{
+#title_menu {
     font-size: 20px;
     font-weight: bold;
 }
 
-h2{
+h2 {
     padding: 1em;
     margin: 15px;
 }
 
-h3{
+h3 {
     margin: 25px;
 }
 
-h4{
+h4 {
     margin: 15px;
 }
 
-figure{
+figure {
     float: right;
     padding: 25px;
     text-align: center;
@@ -116,7 +122,7 @@ figure{
     margin: 0.5em;
 }
 
-.content_img{
+.content_img {
     width: 300px;
     height: auto;
     padding-bottom: 0.5em;

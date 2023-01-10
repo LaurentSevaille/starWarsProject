@@ -1,3 +1,4 @@
+<header>
 <nav class="navbar navbar-expand-lg justify-content-between bg-primary:">
     <div class="container-fluid">
         <a class="navbar-brand">Project Star Wars</a>
@@ -11,13 +12,14 @@
                     <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    <a class="nav-link dropdown-toggle" id="loginout" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         Login / Sign in
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="">Login</a></li>
-                        <li><a class="dropdown-item" href="">Sign In</a></li>
+                        <li><a class="dropdown-item" id="loginNav" href="./login.html" >Log in</a></li>
+                        <li><a class="dropdown-item" id="registerNav" href="./register.html" >Sign In</a></li>
+                        <li><a class="dropdown-item" id="logoutNav" href="./logout.html" >Log out</a></li>
                     </ul>
                 </li>
             </ul>
@@ -31,3 +33,24 @@
         </div>
     </div>
 </nav>
+
+<script>
+if(sessionStorage.permission == null)
+{
+    $("#loginNav").show();
+    $("#registerNav").show();
+    $("#logoutNav").hide();
+    
+    $("#loginout").html("Log in / Sign in");
+}
+
+else
+{
+    $("#loginNav").hide();
+    $("#registerNav").hide();
+    $("#logoutNav").show();
+    
+    $("#loginout").html("Log out");
+}
+</script>
+</header>
