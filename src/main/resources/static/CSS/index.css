@@ -1,37 +1,133 @@
-#carousel_characters
-{
-    width : 150px; 
-    height: 150px;
+body {
+    color: #1f1d1d;
+    background-image: url('../img/background_falcon.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: black;
+}
+
+.sidebar {
+    position: fixed;
+    width: 25%;
+    height: 100vh;
+    font-size: 0.65em;
+}
+
+.nav {
+    position: relative;
+    margin: 0 15%;
+    text-align: left;
+    top: 45%;
+    transform: translateY(-50%);
+    font-weight: bold;
+}
+
+.nav a {
+    color: #131212;
+    line-height: 5em;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.4em;
+    display: block;
+    transition: all ease-out 300ms;
+}
+
+a:visited {
+    color: #2b2828;
+}
+
+a:hover {
+    color: #93B8BA;
+}
+
+.nav ul {
+    list-style: none;
+}
+
+.nav .active a {
+    color: white;
+    font-size: 17px;
+    text-align: center;
+}
+
+.nav .subtitle{
+    font-size: 13px;
+    line-height: 2em;
+    letter-spacing: 0.2em;
+    color: black;
+}
+
+.nav :not(.active)::after {
+    opacity: 0.2;
+}
+
+.nav :not(.active):hover a {
+    color: rgba(#FFF, 0.75);
+}
+
+.nav p {
+    text-transform: uppercase;
+    font-size: 1em;
+    letter-spacing: 0.1em;
+    color: #FFF;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* To have space between carousel */
+.opacity {
+    color: rgba(0, 0, 0, 0);
+}
+
+/* Carousel size & position */
+#carousel_all {
+    position: fixed;
+    width: 75%;
+    height: 90%;
+    right: 0;
+}
+
+.container 
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
 
 .cropped
 {
-    width : 150px; 
-    height: 150px;
+    width : 300px; 
+    height: 300px;
     object-fit: cover;
+}
+
+#carousel_characters
+{
+    width : 300px; 
+    height: 300px;
+
 }
 
 #carousel_planets
 {
-    width : 150px; 
-    height: 150px;
+    width : 300px; 
+    height: 300px;
 }
 
 #carousel_factions
 {
-    width : 250px; 
-    height: 250px;
+    width : 300px; 
+    height: 300px;
+    background-color: rgb(255, 255, 255);
 }
-
-.container_nav
-{
-    display: flex;
-    flex-direction: row;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-}
-
 
 .carousel-caption 
 {
@@ -46,24 +142,4 @@
     white-space:nowrap;
     padding: 0;
     margin-bottom: 0;
-}
-
-#carousel_all
-{
-    display: flex;
-    flex-direction: row;
-    flex-flow: row wrap;
-    justify-content: center;
-    flex-grow:1;
-}
-
-.carousel-item:hover .carousel-caption 
-{
-    top: auto;
-    white-space: normal;
-}
-
-.carousel-indicators 
-{
-    bottom: -2em;
 }
