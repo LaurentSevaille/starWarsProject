@@ -86,4 +86,24 @@ public class MainWebController {
             return "not OK";
         }
     }
+
+    @PostMapping("/existAddress/{address}")
+    public String existAddress(@PathVariable("address") String address)
+    {
+
+        if(userRepositoryInterface.countByAddress(address)>=1)
+            return "exist";
+        else
+            return "OK";
+    }
+
+    @PostMapping("/existUser/{username}")
+    public String existUser(@PathVariable("username") String username)
+    {
+
+        if(userRepositoryInterface.countByUsername(username)>=1)
+            return "exist";
+        else
+            return "OK";
+    }
 }
