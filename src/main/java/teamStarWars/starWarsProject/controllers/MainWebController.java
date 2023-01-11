@@ -22,6 +22,16 @@ public class MainWebController {
     private UserRepositoryInterface userRepositoryInterface;
 
 
+    @PutMapping("putArticle/{articleName}")
+    public String updateArticle(@PathVariable("articleName") String articleName, @RequestBody Article article){
+        Article updateArticle = articleRepositoryInterface.findByName(articleName);
+        System.out.println("article name : " + article.getName());
+        updateArticle.setName(article.getName());
+        updateArticle.setContent(article.getContent());
+        articleRepositoryInterface.save(updateArticle);
+        return "Article modified!";
+    }
+
     @PostMapping("/addArticle")
     public String addArticle(@RequestBody Article article) {
         articleRepositoryInterface.save(article);
