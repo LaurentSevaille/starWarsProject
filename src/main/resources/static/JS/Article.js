@@ -13,14 +13,19 @@ console.log("articleName : " + articleName);
 //set the title of the page with the page name
 $('title').html(articleName);
 
+
 $('head').append(
     "<link rel='stylesheet' href='./CSS//bootstrap/bootstrap.min.css' />\
     <link rel='stylesheet' href='./CSS/article_LS.css' />\
     <link rel='icon' type='image/png' href='img/Star-Wars-Logo.png'/>"
     );
+$('#modifyArticle').html(
+    "<a href='./modifyArticle.html?page=" + articleName + "'>Modifier l'article</a>"
+);
 
 $("#header").load("header.html");
 $("#footer").load("footer.html");
+
 
 //Get the article content from the database and insert it in the artileCorps balise
 $.ajax({
@@ -37,6 +42,7 @@ viewComment();
 
 
 
+
 //FUNCTIONS
 
 function myFunction() {
@@ -49,6 +55,7 @@ function myFunction() {
       $("#button_title").html("Show");
     }
 }
+
 
 //Get author et content values from the commetns form and save it int the database.
 //A link between the article and the comment is made during the PostMapping.
@@ -72,8 +79,6 @@ function commentValidation() {
         }
     });
 }
-
-
 
 
 //Get the comment in the database based on article name and add them in the comments section
