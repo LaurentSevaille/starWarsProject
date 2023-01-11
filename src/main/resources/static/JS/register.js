@@ -43,7 +43,7 @@ if(sessionStorage.username == null)
             console.log(existAddress);
             console.log(existUser);
 
-            if(existAddress=="OK" && existUser=="OK")
+            if(existAddress=="OK" && existUser=="OK" && validateEmail($("#email").val()))
             {
 
                 $('#spanuser1').css("color", "");
@@ -107,6 +107,18 @@ if(sessionStorage.username == null)
                     $('#spanuser2').css("color", "");
                     $('#spanuser2').html("");
                 }
+
+                if(!validateEmail($("#email").val()))
+                {
+                    $('#spanemail2').css("color", "red");
+                    $('#spanemail2').html("Email is not valid");
+                }
+        
+                else
+                {
+                    $('#spanemail2').css("color", "");
+                    $('#spanemail2').html("");
+                }
             }
 
         }
@@ -119,6 +131,25 @@ if(sessionStorage.username == null)
             
         }
     })  
+
+    $("#email").keyup(function()
+    {
+        if(!validateEmail($("#email").val()))
+        {
+            $('#spanemail2').css("color", "red");
+            $('#spanemail2').html("Email is not valid");
+        }
+
+        else
+        {
+            $('#spanemail2').css("color", "");
+            $('#spanemail2').html("");
+        }
+        
+    })
+
+
+
 }
 
 else
@@ -135,3 +166,9 @@ else
     },3000);
 }
 
+const validateEmail = (email) => 
+{
+    return email.match(
+      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+};
