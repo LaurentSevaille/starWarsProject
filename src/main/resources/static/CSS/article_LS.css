@@ -12,6 +12,18 @@ body {
     background-position-y: bottom, top;
 }
 
+a {
+    color: #93B8BA;
+}
+
+a:hover {
+    color: #ccad85;
+}
+
+section div {
+    text-align: left;
+}
+
 .container {
     max-width: none;
     width: 70%;
@@ -60,14 +72,16 @@ body {
 .infobox-title {
     text-align: center;
     font-size: large;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     background-color: #ccad85;
 }
 
 .infobox-name {
     text-align: center;
     font-size: x-large;
+    padding-top: 2px;
+    padding-bottom: 2px;
 }
 
 #navigation {

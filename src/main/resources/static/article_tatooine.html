@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/Star-Wars-Logo.png" />
+    <link rel="stylesheet" href="CSS/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="CSS/article_LS.css" />
+    <title>Tatooine</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <script>
+        $(function () {
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
+        });
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <div id="header"></div>
+    </header>
+
+    <div id="article_header">
+        <br><br>
+    </div>
+
+    <div class="container" id="article">
+        <h1 id="page-title">Tatooine</h1>
+        <div id="content" class="page-content">
+
+            <div class="quote">
+                <dl>
+                    <dd>
+                        <i>"Well, if there's a bright center to the universe, you're on the planet that it's farthest
+                            from."</i>
+                    </dd>
+                    <dd>
+                        - Luke Skywalker, to C-3PO
+                    </dd>
+                </dl>
+            </div>
+
+            <aside role="region" class="portable-infobox">
+                <div id="img_infobox">
+                    <img src="./IMG/Tatooine.webp" alt="tatooine" id="illustration_maj" title="Tatooine" />
+                </div>
+                <h2 class="infobox-name">Tatooine</h2>
+                <section>
+                    <h4 class="infobox-title">Astrographical information</h4>
+                    <div>
+                        <b>Region :</b> Outer Rim Territories <br>
+                        <b>Sector :</b> Arkanis sector
+                        <b>System :</b> Tatoo system<br>
+                        <b>Suns :</b> Tatoo I, Tatoo II<br>
+                        <b>Rotation period :</b> 34 hours<br>
+                        <b>Orbital period :</b> 304 standard days<br>
+                    </div>
+                </section>
+
+                <section>
+                    <h4 class="infobox-title">Physical information</h4>
+                    <div>
+                        <b>Diameter :</b> 10,465 km <br>
+                        <b>Atmosphere :</b> Breathable <br>
+                        <b>Climate :</b> Hot and arid <br>
+                    </div>
+                </section>
+
+            </aside>
+
+            <p>
+                <b>Tatooine</b> was a sparsely inhabited circumbinary desert planet located in the galaxy's Outer Rim
+                Territories. Part of a binary star system, the planet orbited two scorching suns, resulting in the world
+                lacking the necessary surface water to sustain large populations. As a result, many residents of the
+                planet instead drew water from the atmosphere via moisture farms. The planet also had little surface
+                vegetation. It was the homeworld to the native Jawa and Tusken Raider species and of Anakin and Luke
+                Skywalker, who would go on to shape galactic history.
+            </p>
+
+            <p>
+                It saw a population explosion following the search for valuable mining deposits on the planet's silicate
+                surface. Finding the ore to have undesirable metallurgical properties, mining firms left the planet en
+                masse, leaving behind valuable equipment, most notably large sandcrawlers, which were later used by the
+                Jawa population. The planet then became a haven for smugglers and criminal activity, and fell under the
+                influence of the Hutt Clan while scattered, isolated settlements of hard-working inhabitants endured.
+            </p>
+
+            <p>
+                Generally ignored by the galaxy at large, Tatooine gained the notice of the Galactic Empire during the
+                Galactic Civil War when an escape pod carrying two droids in possession of top-secret information landed
+                on the sandy Outer Rim world. The Empire went on to establish a heavier presence on the planet, forging
+                a tenuous relationship with Jabba Desilijic Tiure of the Hutt Clan. Open conflict soon broke out between
+                the Empire and a Rebel Alliance cell on Tatooine that culminated in a battle that left the Empire's hold
+                on the world significantly weakened.
+            </p>
+
+            <p>
+                Following the death of Jabba and the withdrawal of Imperial forces after the Battle of Endor, an
+                enormous power vacuum occurred on the world, with numerous crime syndicates like the Red Key Raiders
+                attempting to build legitimacy as mining companies. Eventually, former bounty hunter Boba Fett returned
+                and took over Jabba's former territory. Coming into conflict with both the Hutt Clan and the Pyke
+                Syndicate, the new Daimyo was pulled into a gang war that threatened the future of Tatooine. With help
+                from the Mandalorian Din Djarin, Fett rallied the denziens of the settlements Mos Espa and Freetown to
+                push back against the invaders, ushering in a new era of respect between the people of the planet.
+            </p>
+
+            <div id="navigation">
+                <span><a id="title_menu">Contents</a>
+                    <button id="button_title" onclick="myFunction()" class="btn btn-link" type="button"> Show </button>
+                </span>
+                <ul class="nav flex-column justify-content-left" id="menu" style="display: none;">
+                    <li class="nav-item">
+                        <a class="nav-link dropdown-item" href="#anchor1">Description</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#anchor2">Culture</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#anchor3">History</a>
+                        <ol>
+                            <li><a href="#a3l1">Early history</a></li>
+                            <li><a href="#a3l2">Scum and villainy</a></li>
+                            <li><a href="#a3l3">War comes to Tatooine</a></li>
+                        </ol>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link dropdown-item" href="#anchor4">Inhabitants</a>
+                    </li>
+                </ul>
+            </div>
+
+            <h2 id="anchor1">Description</h2>
+            <p>
+            <figure>
+                <img src="./IMG/tatooine_description.jpg" alt="Tatooine Jundland Wastes" class="content_img" title="Jundland Wastes">
+                <figcaption>A remote settlement within the <br> vast canyons of the Jundland Wastes.</figcaption>
+            </figure>
+            Tatooine was a planet located in the Outer Rim, a region of the galaxy far removed from its core. It had
+            three moons, Ghomrassen, Guermessa, and Chenini. Long ago, Tatooine was covered in oceans and rainforests,
+            but for unknown reasons, it became a hot desert world. Tatooine orbited twin suns, Tatoo I and Tatoo II. The
+            whole planet was covered in harsh deserts, and only a small part of its northern hemisphere could sustain
+            intelligent life. The landscape was covered with sand dunes, mountains, and canyons, which made traversing
+            the planet very difficult. Due to the absence of surface water, those who lived on Tatooine had to draw
+            moisture through the dry air.
+            <br><br>
+            Rain was incredibly rare on Tatooine, coming once a year, decade, or century. When the rain came, some
+            plants were able to grow in a brief yet glorious period. Inhabiting the planet were many native species,
+            the largest of which were the carnivorous krayt dragons. The common krayt dragon, while more plentiful, was
+            shadowed by the greater krayt dragon, which submerged itself under the shifting sands and used its powerful
+            limbs to traverse through the dunes. In addition, the common bantha and eopie species also found a home on
+            the world, along with dewbacks, rontos, womp rats, massiffs, and scurriers.
+            <br><br>
+            The cities of Tatooine were frequently blasted by sandstorms and the inhabitants always seemed to know when
+            one was coming. Not much distinguished the towns as the poor standard of living was common. The cities were
+            separated from each other by large expanses of deserts. Rural life, on the other hand, was mostly small
+            moisture farms that sold water and food for a meager living.
+            </p>
+
+            <h2 id="anchor2">Culture</h2>
+            <p>
+                An annual holiday celebrated on the planet was Boonta Eve. The holiday was celebrated in honor of Boonta
+                Hestilic Shad'ruu, a Hutt who rose to be a god. The economy of Tatooine largely ran on water and
+                crime. With the Hutt Clan taking near-full control over the trafficking and smuggling trades, new
+                citizens had a large time breaking into the criminal market even though it was more lucrative than the
+                water market.
+            </p>
+
+            <h2 id="anchor3">History</h2>
+            <h3 id="a3l1">Early history</h3>
+            <p>
+            <figure>
+                <img src="./IMG/tatooine_jawas.jpg" alt="Jawas" class="content_img"
+                    title="Jawas">
+                <figcaption>Jawa traders sold scrap to offworlders <br> who settled on Tatooine as moisture farmers</figcaption>
+            </figure>
+            It was homeworld to the native Jawa and Tusken Raider species—and presumably with vast oceans of surface
+            water, lush rainforest and flowered fields. According to the Legend of Lehon, Tatooine had also
+            been inhabited by a group called the Kumumgah during this time, but there was little evidence to support
+            the story. Sometime in Tatooine's history, the whole planet became a desert by unknown means when
+            the oceans dried away. Much later, it would be colonized by early settlers and explorers, who
+            mistook the planet for a third sun owing to its highly reflective silicate surface.
+            <br><br>
+            As a result of sporadic and unsuccessful colonization ventures, the planet became a haven for smugglers and
+            criminal activity, while scattered, isolated settlements of hard-working inhabitants attempted to earn a
+            living in the wastes.
+            <br><br>
+            A long-ago mining boom saw the widespread use of sandcrawlers on the desert plains in an effort to mine
+            valuable minerals. However, after it was discovered that most valuable minerals could be found on the
+            surface, along with most minerals having unwanted metallurgic properties, the sandcrawlers were
+            abandoned and eventually picked up by the native Jawas for use as shelter and mobile bases, from which they
+            collected scrap from thousands of years of crashed spacecraft and failed mining projects.
+            <br><br>
+            Offworlders erected various cities in the desert, and colonists who decided to stay on the planet built
+            moisture farms. The B'omarr Order on Tatooine kept their disembodied brains floating in jars that hung below
+            their spider-like droid bodies, and built a monastery on the planet which would eventually come under the
+            ownership of Jabba Desilijic Tiure as his palace.
+            <br><br>
+            Most wealth eventually found its way into the city of Mos Espa, with most of it procured from gambling and
+            off-world trade, especially through the lucrative black market. The influx of commercial ventures fueled Mos
+            Espa's growth, eventually securing its regional importance as a hub of economic and financial activity. With
+            high tariffs imposed by the Hutts, some believed themselves able to escape paying them by doing business in
+            the planet's de facto capital, however often found themselves scammed and broke if not through gambling,
+            through simple bad luck.
+            </p>
+
+            <h3 id="a3l2">Scum and villainy</h3>
+            <div class="quote">
+                <dl>
+                    <dd>
+                        <i>"The Republic doesn't exist out here. We must survive on our own."</i>
+                    </dd>
+                    <dd>
+                        - Shmi Skywalker, to Padmé Amidala
+                    </dd>
+                </dl>
+            </div>
+            <p>
+                In the last decades of the Galactic Republic, Tatooine was known as a haven for smugglers and criminal
+                activity, and also as the home to a human slave named Shmi Skywalker and her son Anakin.
+                <br><br>
+                During this period, Queen Padmé Amidala of Naboo escaped the capture of her homeworld by the Trade
+                Federation, and she took refuge on Tatooine with her companions and protectors, including the Jedi
+                Master Qui-Gon Jinn and his apprentice Obi-Wan Kenobi. The Skywalkers befriended Amidala's party, and
+                the young slave ended up participating in a podrace to help his new friends obtain a new T-14 hyperdrive
+                generator for their damaged starship. After discovering that Anakin Skywalker would make an exceptional
+                recruit for the Jedi Order, Master Qui-Gon Jinn managed to obtain his freedom from the junk dealer Watto
+                in the city of Mos Espa, and the Queen's party left Tatooine with the boy. After participating in
+                numerous adventures, including the Invasion of Naboo, the former Tatooinian slave joined the Jedi Order
+                under Kenobi's tutelage.
+                <br><br>
+                Ten years later, Skywalker, now a gifted but unruly Jedi student, sensed that his mother, who had stayed
+                on Tatooine and gotten married, was in terrible pain. Skywalker returned to the desert world in the
+                company of Amidala, who was now a senator of the Republic and the young Jedi's secret lover. It
+                transpired that Shmi Skywalker had been captured by Tusken Raiders and was detained in one of their
+                camps. When Skywalker finally discovered his mother's location, he arrived too late, and she died in his
+                arms from the consequences of the Tuskens' mistreatment of her. Enraged, the young Jedi slaughtered the
+                entire Tusken tribe. This had serious consequences as the first step towards Anakin Skywalker's fall
+                from grace. Shortly after the incident, the Clone Wars broke out, and the tortured Tatooinian Jedi
+                became a major player of the pan-galactic conflict.
+                <br><br>
+                During the Clone Wars, a Jedi-backed mission to Jabba's Palace occurred, with the Jedi hoping to rescue
+                Rotta the Huttlet from the Separatist Alliance. Later during the war, Chairman Papanoida and his
+                son, Ion Papanoida headed to Tatooine to track down the bounty hunter Greedo, who had kidnapped members
+                of their family.
+                <br><br>
+                Three years after the start of the war, Skywalker fell to the dark side and joined the Sith, old
+                adversaries of the Jedi who had long planned to take over the galaxy. The Galactic Empire, a new regime
+                established to replace the Republic, started to hunt all Jedi. Skywalker's former master Obi-Wan Kenobi
+                went into hiding on Tatooine, bringing the infant son of the fallen Jedi with him. On the desert
+                expanses of Tatooine, Kenobi hoped that he could keep young Luke from his father's evil influence.
+                Kenobi entrusted the boy to Shmi's stepson, Owen Lars, and his wife Beru.
+            </p>
+
+            <h3 id="a3l3">War comes to Tatooine</h3>
+            <figure>
+                <img src="./IMG/tatooine_war.jpg" alt="Stormtrooper on Tatooine" class="content_img"
+                    title="Stormtrooper on Tatooine">
+                <figcaption>Imperial sandtrooper on <br> the streets of Mos Eisley.</figcaption>
+            </figure>
+            <p>
+                Shortly after the Battle of Scarif in the Galactic Civil War, the droids R2-D2 and C-3PO landed on
+                Tatooine's surface in an escape pod after their CR90 corvette the Tantive IV was captured by the
+                Imperial I-class Star Destroyer Devastator. With the droids carrying the technical readouts to the
+                battle station, a task force was sent to the planet in order to capture the two droids. Upon coming in
+                contact with a Jawa sandcrawler, the two were abducted and later sold to Owen Lars of the Lars moisture
+                farm, with R2 being chosen after another astromech droid, R5-D4 broke down. Later that day, Luke
+                Skywalker, unknowingly Anakin Skywalker's son came across a recorded message of Princess Leia pleading
+                for the help of Obi-Wan Kenobi against the Galactic Empire. Intrigued, if only because R2 later ran
+                away, forcing Luke and C-3PO to retrieve him, the two were attacked by native Tusken Raiders. Being
+                saved by Kenobi, Skywalker learned that he was a Jedi while Kenobi offered to train him. Refusing and
+                heading home, Skywalker came across the remains of the sandcrawler that originally sold the two droids
+                to his family. Realizing that it was the work of Imperial forces and that they may have traced the
+                droids back to his house, he rushed back only to find the moisture farm burned to the ground, with the
+                charred remains of his aunt and uncle laying outside in the sun. Agreeing to go with Kenobi to Mos
+                Eisley, they discovered the city under Imperial control and they hired the services of smuggler Han Solo
+                and his partner, Chewbacca to transport them offworld to Alderaan. Barely escaping an intense firefight
+                with multiple sandtroopers, the two escaped Tatooine and several Star Destroyers into hyperspace.
+                <br><br>
+                Sometime during the Galactic Civil War, Tusken Raiders under the leadership of the Jundland General
+                attacked local settlements. He and his followers were ultimately defeated by a gang of mercenaries
+                located on-world. Having allied with the Rebel Alliance, the gang led the Rebels into a series
+                of successful operations on Tatooine that would conclude with the defeat of the Empire's 68th Legion and
+                Tatooine garrison. Nevertheless, the Empire would come to reestablish its presence on the desert
+                world, with Lieutenant Ardo Banch serving as an officer in the garrison.
+                <br><br>
+                Shortly after the Battle of Yavin, a shuttle with emissaries in the employ of Jabba, who were meant to
+                negotiate a deal to provide support to the Empire at Weapons Factory Alpha on Cymoon 1, was intercepted
+                by the Alliance to Restore the Republic, and a strike team consisting of Han Solo, Luke Skywalker, and
+                Leia Organa proceeded to the factory, infiltrating and destroying it. The negotiations having failed,
+                Darth Vader returned to Tatooine to negotiate the deal with Jabba in person. After the negotiations were
+                complete, Vader remained on Tatooine shortly to wipe out a Tusken Raider tribe and hire the bounty
+                hunters Boba Fett and Krrsantan to ascertain the identity of the pilot who destroyed the First Death
+                Star. Fett tracked down and dueled Skywalker, who had returned to the late Ben Kenobi's dwelling for
+                education, learning his name and reporting to Vader.
+                <br><br>
+                <figure>
+                    <img src="./IMG/tatooine_maj.jpg" alt="Tatooine twin suns" class="content_img"
+                        title="Tatooine twin suns">
+                    <figcaption>Tatooine sunsets.</figcaption>
+                </figure>
+                After learning he had a son, Vader traveled to Tatooine with his crew, consisting of Doctor Chelli Lona
+                Aphra, 0-0-0, and BT-1, to investigate the Lars Homestead and Kenobi's home. When the Rebel Alliance
+                split its forces up to escape the Empire after its major losses in the Battle of Hoth, the young
+                human Vulaada Klam and her pet qaberworm Gurtyl found themselves on Tatooine after their time with
+                the Rebellion on Hoth. Vader also returned to Tatooine in the aftermath of the Battle of Hoth and
+                the duel on Cloud City to investigate the Lars Homestead once more.
+                <br><br>
+                Following the battle over Jekara, Fett delivered Solo, now frozen in carbonite, to Jabba, where he
+                served as a wall decoration. When Aphra was taken over by the Spark Eternal, her allies Sana Starros
+                and Kho Phon Farrus traveled throughout the galaxy to collect those who cared about Aphra to save her.
+                They traveled to Tatooine to recruit Klam, who was sitting atop Gurtyl in a town among several other
+                residents, though Klam ultimately did not accompany them when they traveled to a Rebel Rendezvous to
+                recruit Magna Tolvan.
+                <br><br>
+                Attempting to rescue Solo, the droids R2-D2 and C-3PO infiltrated Jabba's Palace disguised as servants
+                after Luke Skywalker "gifted" them to the crime lord. Arriving at the palace not long after, Skywalker
+                attempted to bargain with Jabba for his friend's life, only to be refused and dropped into a rancor pit.
+                After a struggle, Luke managed to kill the rancor, angering Jabba and sentencing him and Solo (who was
+                freed by Organa in the guise of a bounty hunter who had captured his friend, Chewbacca) to death in the
+                Great Pit of Carkoon, while Organa became one of Jabba's many entertainers. Later, as they were about to
+                be executed, R2-D2 fired Skywalker's lightsaber at him from Jabba's sail barge, allowing Skywalker,
+                Solo, and Lando Calrissian, who had been disguised as a guard, to make their escape. After an intense
+                shootout, Organa strangled Jabba to death with the chain used to keep her hostage, and Boba Fett was
+                knocked into the sarlacc. Skywalker, Solo, Organa, Chewbacca, Calrissian, and the two droids escaped the
+                planet once more. Although Fett was swallowed by the sarlacc, he survived and managed to escape the
+                creature's stomach, though his armor was stolen by Jawas shortly thereafter due to his weakness from his
+                escape.
+                <br><br>
+                The Galactic Empire annexed Tatooine prior to the Battle of Endor.
+            </p>
+
+            <h2 id="anchor4">Inhabitants</h2>
+            <figure>
+                <img src="./IMG/tatooine_MosEisley.jpg" alt="Mos Eisley" class="content_img"
+                    title="Mos Eisley">
+                <figcaption>Mos Eisley was one of the <br> rare cities on Tatooine.</figcaption>
+            </figure>
+            <p>
+                Tatooine had only a few port cities, including Mos Espa and Mos Eisley. Beside those cities, which
+                attracted many criminals, most settlers of Tatooine operated moisture farms in the expanse of the
+                desert. Due to the planet's dangerously high daytime temperature and whipping sandstorms, most
+                residents of Tatooine kept their skin covered with practical materials that wick away sweat and limit
+                exposure to the harmful ultraviolet radiation of the twin suns.
+                <br><br>
+                Tusken Raiders often attacked isolated settlements on the fringes of their territory such as Anchorhead,
+                and often took potshots at podracers during the Boonta Eve Classic, celebrated once every year as part
+                of the Boonta Eve holiday celebrating the famed Hutt Boonta Hestilic Shad'ruu and his ascension to
+                godhood. The Max Rebo Band's song "Lapti Nek" ranked number two in the top five of Tatooine's greatest
+                hits, beaten by Figrin D'an and the Modal Nodes' number-one single "Mad About Me." The Modal Nodes
+                followed up their success with the number-three hit "The Sequential Passage of Chronological Intervals"
+                and ranked-five hit "Goodnight, But Not Goodbye (Mad About Me Remix)." The Max Rebo Band was left with
+                only two of Tatooine's top five songs, with their number-four hit "(That Joyous Night) I Ate My
+                Mate."
+                <br><br>
+                Lawful inhabitants on the planet often utilized moisture vaporators owing to their energy efficiency,
+                resulting in their status as one of the most crucial pieces of equipment for survival. While single
+                vaporators often cost 500 credits each, some individuals bought and owned multiple units, creating
+                moisture farms. Often utilizing the extra water for small hydroponic gardens, few gardens yielded enough
+                to make substantial profits. In addition, vaporators required frequent maintenance and security systems
+                to deter attacks from Tusken Raiders, who believed all water was sacred and belonged to them. The
+                Raiders, native to the planet, were a nomadic tribal society with strict social and moral codes, along
+                with defined territorial boundaries. Frequent colonial trespasses on their sovereign territory, along
+                with the collusion between old values and galactic modernization, often forced the Tuskens to attack
+                colonists whom they both vehemently feared and despised.
+                <br><br>
+                Jawas were also a native species to Tatooine, and as such deeply entrenched into a nomadic lifestyle.
+                Unlike the Tuskens, whom they attempted to avoid, Jawas frequently sold collected scrap metal and droids
+                to the scattered settlers on the planet, earning a reputation as merchants and vagabonds. Myth and
+                folklore also played an important part in Jawa society, with the Jawa's belief that the great Dune Sea
+                was once a true ocean. Later research into ancient fossil-bearing rock and eroded canyons seemed to
+                support this notion. Nonetheless, most of Tatooine's inhabitants refused to believe the story, finding
+                it far-fetched and ludicrous.
+                <br><br>
+                Slavery, while banned through Republic laws, was readily and blatantly practiced under the twin suns. An
+                entire section of Mos Espa was purposed as a Slave Quarter. On Tatooine, at least, the institution of
+                slavery was seen as a socioeconomic symbol of wealth and prestige, resulting in highly protective owners
+                who reluctantly parted with their possessions. Used as capital in business transactions, nearly all
+                slavery operations were overseen by the Hutt gangsters, who regarded slavery as a useful institution.
+                <br><br>
+            </p>
+
+        </div>
+    </div>
+
+    <div class="container" id="comments">
+        <h3>Comments</h3>
+        <ul>
+            <li>com</li>
+            <li>com</li>
+        </ul>
+    </div>
+
+    <footer>
+        <div id="footer"></div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+    <script
+        src="https://cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.3.7/dist/latest/bootstrap-autocomplete.min.js"></script>
+
+    <script src=' http://code.jquery.com/jquery.min.js '></script>
+    <script type="text/javascript" src="JS/article_LS.js"></script>
+</body>
+
+</html>
