@@ -31,8 +31,8 @@ $('#validationButton').click(function () {
         url: "http://localhost:8080/API/putArticle/" + articleName,
         data: JSON.stringify(valeurs),
         success: function (reponse) {
-            window.location.href = "Article.html?page=" + valeurs.name;
             alert(reponse);
+            window.location.href = "Article.html?page=" + valeurs.name;
         }
     });
 });
