@@ -1,10 +1,15 @@
 //let link = "//raw.githubusercontent.com/LaurentSevaille/starWarsProject/master/src/main/resources/static/";
-let link = "//localhost:8080/";
-$('head').append("<link rel='stylesheet' href='"+link+"/CSS//bootstrap/bootstrap.min.css' />");
-$('head').append("<link rel='stylesheet' href='"+link+"/CSS/article_LS.css' />");
 
-var articleName = $("title").text();
-console.log(JSON.stringify(articleName));
+//get the parameters of th URL
+const urlParams = new URLSearchParams(window.location.search);
+console.log("url parms : " + urlParams);
+
+//Get the value of the paramettre 'page'
+const articleName = urlParams.get('page');
+console.log("articleName : " + articleName);
+
+
+//FUNCTIONS
 
 function myFunction() {
     var x = document.getElementById("menu");
@@ -17,28 +22,54 @@ function myFunction() {
     }
 }
 
+//Get author et content values from the commetns form and save it int the database.
+//A link between the article and the comment is made during the PostMapping.
+function commentValidation() {
+    var inputValues = {
+        author: $("#authorName").val(),
+        content: $("#comContent").val()
+    };
+    console.log(JSON.stringify(inputValues));
+
+    $.ajax({
+        type: "POST",
+        headers: { "Content-Type": "application/json" },
+        url: "http://localhost:8080/API/addComment/" + articleName,
+        data: JSON.stringify(inputValues),
+        success: function (reponse) {
+            //$('#output').html(JSON.stringify(reponse));
+            //console.log(JSON.stringify(reponse));
+            alert(reponse);
+        }
+    });
+}
+
+
+//ARTICLE IMPORTS
+
+//set the title of the page with the page name
+$('title').html(articleName);
+
+$('head').append(
+    "<link rel='stylesheet' href='./CSS//bootstrap/bootstrap.min.css' />\
+    <link rel='stylesheet' href='./CSS/article_LS.css' />\
+    <link rel='icon' type='image/png' href='img/Star-Wars-Logo.png'/>"
+    );
+
+$("#header").load("header.html");
+$("#footer").load("footer.html");
+
 //Get the article content from the database and insert it in the artileCorps balise
-/*
 $.ajax({
     type: "GET",
     url: "http://localhost:8080/API/viewArticle/" + articleName,
     success: (reponse) => {
-        $("#articleCorps").html(reponse);
+        $("#article").html(reponse);
     }
 });
-*/
 
-$("body").append("<div class='container' id='comments'>\
-        <h3>Comments</h3>\
-        <h4>Add a comment</h4>\
-        Author : <br><input type='text' id='authorName'><br>\
-        Content : <br>\
-        <textarea id='comContent' style='width: 50%; height: 100px'></textarea>\
-        <br>\
-        <button id='validationButton'>Valider</button><br>\
-        <dl id='commentList'>\
-        </dl>\
-        </div>");
+
+$("#commentsForm").load("comment_form.html");
 
 //Get the comment in the database based on article name and add them in the comments section
 $.ajax({
@@ -56,24 +87,4 @@ $.ajax({
     }
 });
 
-//Get author et content values from the commetns form and save it int the database.
-//A link between the article and the comment is made during the PostMapping.
-$("#validationButton").click(function () {
-    var inputValues = {
-        author: $("#authorName").val(),
-        content: $("#comContent").val()
-    };
-    console.log(JSON.stringify(inputValues));
 
-    $.ajax({
-        type: "POST",
-        headers: {"Content-Type": "application/json"},
-        url: "http://localhost:8080/API/addComment/" + articleName,
-        data: JSON.stringify(inputValues),
-        success: function (reponse) {
-            //$('#output').html(JSON.stringify(reponse));
-            //console.log(JSON.stringify(reponse));
-            alert(reponse);
-        }
-    });
-});
