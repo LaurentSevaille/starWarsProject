@@ -143,3 +143,17 @@ figure {
 }
 
 /*Comments section*/
+
+#validationButton{
+    padding: 10px;
+}
+
+#commentList dt {
+    margin-left: 20px;
+}
+
+/*
+#commentList dt {
+    
+}
+*/
