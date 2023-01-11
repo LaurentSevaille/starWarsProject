@@ -1,56 +1,55 @@
 <header>
-<nav class="navbar navbar-expand-lg justify-content-between bg-primary:">
-    <div class="container-fluid">
-        <a class="navbar-brand">Project Star Wars</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="loginout" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Login / Sign in
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" id="loginNav" href="./login.html" >Log in</a></li>
-                        <li><a class="dropdown-item" id="registerNav" href="./register.html" >Sign In</a></li>
-                        <li><a class="dropdown-item" id="logoutNav" href="./logout.html" >Log out</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <form class="form-inline">
-                <nav class="d-flex">
-                    <input class="form-control mr-sm-2 basicAutoComplete" id="searchbar" type="search"
-                        placeholder="Search" aria-label="Search" autocomplete="off">
-                    <button class="btn btn-dark" type="submit">Search</button>
-                </nav>
-            </form>
+    <nav class="navbar navbar-expand-lg justify-content-between bg-primary:">
+        <div class="container-fluid">
+            <a class="navbar-brand">Project Star Wars</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="loginout" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Login / Sign in
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" id="loginNav" href="./login.html">Log in</a></li>
+                            <li><a class="dropdown-item" id="registerNav" href="./register.html">Sign In</a></li>
+                            <li><a class="dropdown-item" id="logoutNav" href="./logout.html">Log out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="form-inline" action="search.html" method="get">
+                    <nav class="d-flex">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+                            id="searchbar" name="research">
+                        <button class="btn btn-dark" type="submit">Search</button>
+                    </nav>
+                </form>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-<script>
-if(sessionStorage.permission == null)
-{
-    $("#loginNav").show();
-    $("#registerNav").show();
-    $("#logoutNav").hide();
-    
-    $("#loginout").html("Log in / Sign in");
-}
+    <script>
+        if (sessionStorage.permission == null) {
+            $("#loginNav").show();
+            $("#registerNav").show();
+            $("#logoutNav").hide();
 
-else
-{
-    $("#loginNav").hide();
-    $("#registerNav").hide();
-    $("#logoutNav").show();
-    
-    $("#loginout").html("Log out");
-}
-</script>
+            $("#loginout").html("Log in / Sign in");
+        }
+
+        else {
+            $("#loginNav").hide();
+            $("#registerNav").hide();
+            $("#logoutNav").show();
+
+            $("#loginout").html("Log out");
+        }
+    </script>
 </header>
