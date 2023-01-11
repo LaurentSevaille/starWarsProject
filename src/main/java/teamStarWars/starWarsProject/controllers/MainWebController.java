@@ -67,7 +67,7 @@ public class MainWebController {
     @PostMapping("/registerUser/{username}/{password}/{address}")
     public String registerUser(@PathVariable("username") String username, @PathVariable("password") String password, @PathVariable("address") String address)
     {
-        User user = new User(username,password,address,2);
+        User user = new User(username,password,address,3);
         userRepositoryInterface.save(user);
 
         try
