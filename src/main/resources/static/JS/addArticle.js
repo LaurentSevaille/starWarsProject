@@ -15,3 +15,18 @@ $('#validationButton').click(function () {
         }
     });
 });
+
+/*
+if (sessionStorage.permission == null || sessionStorage.permission>2) {
+    $("#noPermission").show();
+    setTimeout(function()
+    {
+        window.location.href = "index.html";
+    },3000);
+}
+
+else {
+    $("#noPermission").hide();
+}
+*/
+

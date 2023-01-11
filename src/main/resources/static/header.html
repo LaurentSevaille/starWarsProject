@@ -23,6 +23,9 @@
                             <li><a class="dropdown-item" id="logoutNav" href="./logout.html">Log out</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item" id="addArticleNav">
+                        <a class="nav-link active" aria-current="page" href="./addArticle.html">Add Page</a>
+                    </li>
                 </ul>
                 <form class="form-inline" action="search.html" method="get">
                     <nav class="d-flex">
@@ -50,6 +53,14 @@
             $("#logoutNav").show();
 
             $("#loginout").html("Log out");
+        }
+
+        if (sessionStorage.permission <= 2) {
+            $("#addArticleNav").show();
+        }
+
+        else {
+            $("#addArticleNav").hide();
         }
     </script>
 </header>
