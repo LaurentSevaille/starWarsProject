@@ -7,7 +7,7 @@
 body {
     color: #1f1d1d;
     background-image: url('../img/background_falcon.jpg');
-    background-repeat: no-repeat;
+    background-color: black;
     background-size: cover;
 }
 
