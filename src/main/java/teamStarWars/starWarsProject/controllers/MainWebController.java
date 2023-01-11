@@ -35,6 +35,14 @@ public class MainWebController {
         return content;
     }
 
+    @GetMapping("/research/{researchArticleName}")
+    public List reserachArticle(@PathVariable("researchArticleName") String researchArticleName){
+        String likePattern = "%" + researchArticleName + "%";
+        List<Article> articleList = articleRepositoryInterface.findByNameLike(likePattern);
+        System.out.println(likePattern);
+        return articleList;
+    }
+
     @GetMapping("/viewComment/{articleName}")
     public List<Comment> viewcomment(@PathVariable("articleName") String articleName){
         List<Comment> comments = articleRepositoryInterface.findByName(articleName).getCommentList();
@@ -65,7 +73,7 @@ public class MainWebController {
     @PostMapping("/registerUser/{username}/{password}/{address}")
     public String registerUser(@PathVariable("username") String username, @PathVariable("password") String password, @PathVariable("address") String address)
     {
-        User user = new User(username,password,address,2);
+        User user = new User(username,password,address,3);
         userRepositoryInterface.save(user);
 
         try
@@ -77,5 +85,25 @@ public class MainWebController {
             System.out.println("Erreur d'index");
             return "not OK";
         }
+    }
+
+    @PostMapping("/existAddress/{address}")
+    public String existAddress(@PathVariable("address") String address)
+    {
+
+        if(userRepositoryInterface.countByAddress(address)>=1)
+            return "exist";
+        else
+            return "OK";
+    }
+
+    @PostMapping("/existUser/{username}")
+    public String existUser(@PathVariable("username") String username)
+    {
+
+        if(userRepositoryInterface.countByUsername(username)>=1)
+            return "exist";
+        else
+            return "OK";
     }
 }
