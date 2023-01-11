@@ -4,22 +4,22 @@
 const urlParams = new URLSearchParams(window.location.search);
 console.log("url parms : " + urlParams);
 
-//Get the value of the paramettre 'page'
-const articleName = urlParams.get('page');
+//Get the value of the paramettre "page"
+const articleName = urlParams.get("page");
 console.log("articleName : " + articleName);
 
 //ARTICLE IMPORTS
 
 //set the title of the page with the page name
-$('title').html(articleName);
+$("title").html(articleName);
 
 
-$('head').append(
+$("head").append(
     "<link rel='stylesheet' href='./CSS//bootstrap/bootstrap.min.css' />\
     <link rel='stylesheet' href='./CSS/article_LS.css' />\
     <link rel='icon' type='image/png' href='img/Star-Wars-Logo.png'/>"
     );
-$('#modifyArticle').html(
+$("#modifyArticle").html(
     "<a href='./modifyArticle.html?page=" + articleName + "'>Modifier l'article</a>"
 );
 
@@ -37,6 +37,7 @@ $.ajax({
 });
 
 $("#commentsForm").load("comment_form.html");
+
 viewComment();
 
 
@@ -99,3 +100,16 @@ $.ajax({
 });
 }
 
+/*
+if (sessionStorage.permission == null || sessionStorage.permission>2) {
+    $("#noPermission").show();
+    setTimeout(function()
+    {
+        window.location.href = "index.html";
+    },3000);
+}
+
+else {
+    $("#noPermission").hide();
+}
+*/
