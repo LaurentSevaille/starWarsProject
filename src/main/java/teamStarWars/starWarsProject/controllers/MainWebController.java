@@ -48,13 +48,7 @@ public class MainWebController {
         List<Comment> comments = articleRepositoryInterface.findByName(articleName).getCommentList();
         return comments;
     }
-/*
-    @PostMapping("/addComment")
-    public String addComment(@RequestBody Comment comment) {
-        commentsRepositoryInterface.save(comment);
-        return "OK";
-    }
-*/
+
     @PostMapping("/addComment/{articleName}")
     public String addComment(@PathVariable("articleName")String articleName, @RequestBody Comment comment) {
         Article article = articleRepositoryInterface.findByName(articleName);

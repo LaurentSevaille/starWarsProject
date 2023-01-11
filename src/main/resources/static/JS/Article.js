@@ -8,6 +8,34 @@ console.log("url parms : " + urlParams);
 const articleName = urlParams.get('page');
 console.log("articleName : " + articleName);
 
+//ARTICLE IMPORTS
+
+//set the title of the page with the page name
+$('title').html(articleName);
+
+$('head').append(
+    "<link rel='stylesheet' href='./CSS//bootstrap/bootstrap.min.css' />\
+    <link rel='stylesheet' href='./CSS/article_LS.css' />\
+    <link rel='icon' type='image/png' href='img/Star-Wars-Logo.png'/>"
+    );
+
+$("#header").load("header.html");
+$("#footer").load("footer.html");
+
+//Get the article content from the database and insert it in the artileCorps balise
+$.ajax({
+    type: "GET",
+    url: "http://localhost:8080/API/viewArticle/" + articleName,
+    success: (reponse) => {
+        $("#article").html(reponse);
+    }
+});
+
+$("#commentsForm").load("comment_form.html");
+viewComment();
+
+
+
 
 //FUNCTIONS
 
@@ -37,41 +65,19 @@ function commentValidation() {
         url: "http://localhost:8080/API/addComment/" + articleName,
         data: JSON.stringify(inputValues),
         success: function (reponse) {
-            //$('#output').html(JSON.stringify(reponse));
-            //console.log(JSON.stringify(reponse));
+            $("#authorName").val("");
+            $("#comContent").val("");
+            viewComment();
             alert(reponse);
         }
     });
 }
 
 
-//ARTICLE IMPORTS
 
-//set the title of the page with the page name
-$('title').html(articleName);
-
-$('head').append(
-    "<link rel='stylesheet' href='./CSS//bootstrap/bootstrap.min.css' />\
-    <link rel='stylesheet' href='./CSS/article_LS.css' />\
-    <link rel='icon' type='image/png' href='img/Star-Wars-Logo.png'/>"
-    );
-
-$("#header").load("header.html");
-$("#footer").load("footer.html");
-
-//Get the article content from the database and insert it in the artileCorps balise
-$.ajax({
-    type: "GET",
-    url: "http://localhost:8080/API/viewArticle/" + articleName,
-    success: (reponse) => {
-        $("#article").html(reponse);
-    }
-});
-
-
-$("#commentsForm").load("comment_form.html");
 
 //Get the comment in the database based on article name and add them in the comments section
+function viewComment(){
 $.ajax({
     type: "GET",
     url: "http://localhost:8080/API/viewComment/" + articleName,
@@ -86,5 +92,5 @@ $.ajax({
         }
     }
 });
-
+}
 
