@@ -35,6 +35,14 @@ public class MainWebController {
         return content;
     }
 
+    @GetMapping("/research/{researchArticleName}")
+    public List reserachArticle(@PathVariable("researchArticleName") String researchArticleName){
+        String likePattern = "%" + researchArticleName + "%";
+        List<Article> articleList = articleRepositoryInterface.findByNameLike(likePattern);
+        System.out.println(likePattern);
+        return articleList;
+    }
+
     @GetMapping("/viewComment/{articleName}")
     public List<Comment> viewcomment(@PathVariable("articleName") String articleName){
         List<Comment> comments = articleRepositoryInterface.findByName(articleName).getCommentList();
