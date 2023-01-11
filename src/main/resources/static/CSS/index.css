@@ -7,8 +7,8 @@
 body {
     color: #1f1d1d;
     background-image: url('../img/background_falcon.jpg');
-    background-color: black;
     background-size: cover;
+    background-color: black;
 }
 
 #footer {
