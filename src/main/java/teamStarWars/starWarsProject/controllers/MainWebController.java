@@ -22,7 +22,6 @@ public class MainWebController {
     private UserRepositoryInterface userRepositoryInterface;
 
 
-
     @PostMapping("/addArticle")
     public String addArticle(@RequestBody Article article) {
         articleRepositoryInterface.save(article);
