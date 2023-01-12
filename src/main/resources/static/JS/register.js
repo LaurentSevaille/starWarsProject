@@ -20,6 +20,7 @@ if(sessionStorage.username == null)
                 async: false,
                 success: (response)=>
                     {
+                        console.log(response);
                         existAddress=response;
                     }
                 });
@@ -33,10 +34,14 @@ if(sessionStorage.username == null)
                 async: false,
                 success: (response)=>
                     {
+                        console.log(response);
                         existUser=response;
                     }
                 });
     
+
+            console.log(existAddress);
+            console.log(existUser);
 
             if(existAddress=="OK" && existUser=="OK" && validateEmail($("#email").val()))
             {
@@ -54,6 +59,7 @@ if(sessionStorage.username == null)
                     {
                         $('#registerMenu').hide();
                         alert("API got : "+response);
+                        console.log(response);
     
                         if(response == "OK")
                         {
@@ -166,9 +172,3 @@ const validateEmail = (email) =>
       /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     );
 };
-
-$(document).on('keypress',function(e) {
-    if(e.key == "Enter") {
-        $('#POSTBUTTON').click();
-    }
-});

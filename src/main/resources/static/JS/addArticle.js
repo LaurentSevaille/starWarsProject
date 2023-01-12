@@ -16,10 +16,9 @@ $('#validationButton').click(function () {
     });
 });
 
-
+/*
 if (sessionStorage.permission == null || sessionStorage.permission>2) {
     $("#noPermission").show();
-    $("#autorised").hide();
     setTimeout(function()
     {
         window.location.href = "index.html";
@@ -27,8 +26,7 @@ if (sessionStorage.permission == null || sessionStorage.permission>2) {
 }
 
 else {
-    $("#autorised").show();
     $("#noPermission").hide();
 }
-
+*/
 

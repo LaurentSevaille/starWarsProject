@@ -18,6 +18,9 @@ if(sessionStorage.username == null)
                         sessionStorage.permission = response["permission"];
                         $('#result').html
                         (
+                            "<p>username : "+sessionStorage.username+"</p>" +
+                            "<p>password : "+response["password"]+"</p>" +
+                            "<p>permission : "+sessionStorage.permission+"</p>" +
                             "<p>Success ! You will be redirected to the main page</p>"
                         );
 
@@ -53,12 +56,4 @@ else
         window.location.href = "index.html";
     },3000);
 }
-
-$(document).on('keypress',function(e) {
-    if(e.key == "Enter") {
-        $('#POSTBUTTON').click();
-    }
-});
-
-
 
