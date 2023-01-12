@@ -12,6 +12,12 @@ body {
     background-position-y: bottom, top;
 }
 
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
 a {
     color: #93B8BA;
 }
