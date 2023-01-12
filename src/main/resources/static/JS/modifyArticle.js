@@ -9,30 +9,48 @@ const articleName = urlParams.get('page');
 $('title').html(articleName);
 $('#name').val(articleName);
 
-//Get the article content from the database and insert it in the textarea content balise
-$.ajax({
-    type: "GET",
-    url: "http://localhost:8080/API/viewArticle/" + articleName,
-    success: (reponse) => {
-        $("#content").text(reponse);
-    }
-});
 
-$('#validationButton').click(function () {
-    let valeurs = {
-        name: $("#name").val(),
-        content: $("#content").val()
-    };
-    console.log(JSON.stringify(valeurs));
-
+if(document.referrer != "" && sessionStorage.permission<3)
+{
+    $("#noPermission").hide();
+    $("#authorised").show();
+    //Get the article content from the database and insert it in the textarea content balise
     $.ajax({
-        type: "PUT",
-        headers: { "Content-Type": "application/json" },
-        url: "http://localhost:8080/API/putArticle/" + articleName,
-        data: JSON.stringify(valeurs),
-        success: function (reponse) {
-            alert(reponse);
-            window.location.href = "Article.html?page=" + valeurs.name;
+        type: "GET",
+        url: "http://localhost:8080/API/viewArticle/" + articleName,
+        success: (reponse) => {
+            $("#content").text(reponse);
         }
     });
-});
+
+    $('#validationButton').click(function () {
+        let valeurs = {
+            name: $("#name").val(),
+            content: $("#content").val()
+        };
+        console.log(JSON.stringify(valeurs));
+
+        $.ajax({
+            type: "PUT",
+            headers: { "Content-Type": "application/json" },
+            url: "http://localhost:8080/API/putArticle/" + articleName,
+            data: JSON.stringify(valeurs),
+            success: function (reponse) {
+                alert(reponse);
+                window.location.href = "Article.html?page=" + valeurs.name;
+            }
+        });
+    });
+}
+
+else
+{
+    $("#noPermission").show();
+    $("#authorised").hide();
+    setTimeout(function()
+    {
+        window.location.href = "index.html";
+    },3000);
+}
+
+

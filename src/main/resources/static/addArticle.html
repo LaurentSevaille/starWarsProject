@@ -8,25 +8,25 @@
 </head>
 
 <body>
-    <!--enlever commentaire pour tester permissions
+    <!--If not authorised to add an article show this and hide the rest-->
     <div id="noPermission">
         <p>You do not have the permission to be here. Redirecting to menu.</p>
     </div>
 
-    -->
+ 
 
-
-    <div>
-        <p>Name : <input type="text" id="name"></p>
-        <p>Content : <br />
-            <textarea id="content" style="width: 50%; height: 200px"></textarea>
-        </p>
-        <button id="validationButton">Valider</button><br />
+    <div id = "authorised">
+        <div>
+            <p>Name : <input type="text" id="name"></p>
+            <p>Content : <br />
+                <textarea id="content" style="width: 50%; height: 200px"></textarea>
+            </p>
+            <button id="validationButton">Valider</button><br />
+        </div>
+        <div>
+            <p ID="output"></p>
+        </div>
     </div>
-    <div>
-        <p ID="output"></p>
-    </div>
-
 
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'></script>
     <script type="text/javascript" src="JS/addArticle.js"></script>

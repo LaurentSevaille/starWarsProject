@@ -5,8 +5,12 @@
     Content : <br>
     <textarea id='comContent' style='width: 50%; height: 100px'></textarea>
     <br>
-    <button id='validationButton'>Valider</button><br>
+    <button id='validationButton' class="btn btn-dark">Valider</button>
+    <br><br>
     <script>
         $("#newCommentAuthor").html(sessionStorage.username);
         $("#validationButton").on("click", function(){commentValidation()});
+        if (sessionStorage.permission == null) {
+            $("#validationButton").attr("disabled", true);
+        }
     </script>

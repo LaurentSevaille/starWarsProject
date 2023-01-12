@@ -12,6 +12,12 @@ body {
     background-position-y: bottom, top;
 }
 
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
 a {
     color: #93B8BA;
 }
@@ -141,3 +147,22 @@ figure {
     height: auto;
     padding-bottom: 0.5em;
 }
+
+/*Comments section*/
+
+#validationButton {
+    padding: 10px;
+}
+
+#commentList dt {
+    margin-left: 20px;
+}
+
+/* Doesn't work :( 
+#commentList {
+    overflow-wrap: break-word;
+    overflow: auto;
+    word-break: break-all;
+    white-space: pre-wrap;
+}
+*/
