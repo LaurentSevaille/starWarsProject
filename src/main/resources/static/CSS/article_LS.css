@@ -12,12 +12,6 @@ body {
     background-position-y: bottom, top;
 }
 
-#footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
 a {
     color: #93B8BA;
 }
@@ -94,7 +88,11 @@ section div {
     padding: 30px;
     margin-left: 3em;
     border: 1px rgba(112, 107, 105, 0.89) solid;
-    width: 40%;
+    width: 50%;
+}
+
+#navigation ol li{
+    margin-left: 2em;
 }
 
 #navigation .nav-link {
