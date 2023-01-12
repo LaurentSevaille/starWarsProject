@@ -10,4 +10,7 @@
     <script>
         $("#newCommentAuthor").html(sessionStorage.username);
         $("#validationButton").on("click", function(){commentValidation()});
+        if (sessionStorage.permission == null) {
+            $("#validationButton").attr("disabled", true);
+        }
     </script>
