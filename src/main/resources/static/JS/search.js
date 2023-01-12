@@ -13,10 +13,13 @@ $.ajax({
     success: (reponse) => {
         console.log(reponse);
         console.log("name : " + reponse[0].name);
-        let nomPage =  reponse[0].name;
-        nomPage =nomPage.replace(" ","%20");
-        console.log(nomPage);
-        $("#reponse").html("<a href=Article.html?page=" + nomPage + ">"+
-            reponse[0].name + "</a>");
+
+        for (let i = 0; i <= reponse.length - 1; i++) {
+            nomPage = reponse[i].name;
+            nomPage = nomPage.replace(" ", "%20");
+            console.log(nomPage);
+            $("#reponse").html("<a href=Article.html?page=" + nomPage + ">" +
+                reponse[i].name + "</a>");
+        }
     }
 });

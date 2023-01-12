@@ -13,13 +13,11 @@ console.log("articleName : " + articleName);
 //set the title of the page with the page name
 $("title").html(articleName);
 
-
 $("head").append(
     "<link rel='stylesheet' href='./CSS//bootstrap/bootstrap.min.css' />\
     <link rel='stylesheet' href='./CSS/article_LS.css' />\
     <link rel='icon' type='image/png' href='img/Star-Wars-Logo.png'/>"
     );
-
 
 $("#header").load("header.html");
 $("#footer").load("footer.html");
@@ -65,8 +63,6 @@ function myFunction() {
 //A link between the article and the comment is made during the PostMapping.
 function commentValidation() {
     let now = moment().format('YYYY/MM/DD HH:mm:ss');
-    //let now = new Date().toISOString().slice(0, 19).replace('T', ' ');
-    //let now = new Date()
         var inputValues = {
         author: sessionStorage.username,
         content: $("#comContent").val(),
