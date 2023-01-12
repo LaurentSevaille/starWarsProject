@@ -144,7 +144,7 @@ figure {
 
 /*Comments section*/
 
-#validationButton{
+#validationButton {
     padding: 10px;
 }
 
@@ -152,8 +152,11 @@ figure {
     margin-left: 20px;
 }
 
-/*
-#commentList dt {
-    
+/* Doesn't work :( 
+#commentList {
+    overflow-wrap: break-word;
+    overflow: auto;
+    word-break: break-all;
+    white-space: pre-wrap;
 }
 */
