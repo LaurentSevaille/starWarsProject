@@ -18,7 +18,7 @@ $.ajax({
             nomPage = reponse[i].name;
             nomPage = nomPage.replace(" ", "%20");
             console.log(nomPage);
-            $("#reponse").html("<a href=Article.html?page=" + nomPage + ">" +
+            $("#reponse").append("<a href=Article.html?page=" + nomPage + "><br>" +
                 reponse[i].name + "</a>");
         }
     }
