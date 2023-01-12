@@ -19,15 +19,18 @@ $("head").append(
     <link rel='stylesheet' href='./CSS/article_LS.css' />\
     <link rel='icon' type='image/png' href='img/Star-Wars-Logo.png'/>"
     );
-$("#modifyArticle").html(
-    "<a href='./modifyArticle.html?page=" + articleName + "'>Modifier l'article</a>"
-);
+
+if (sessionStorage.permission<3) { 
+    $("#modifyArticle").html(
+        "<a href='./modifyArticle.html?page=" + articleName + "'>Modify article</a>"
+    );
+}
 
 $("#header").load("header.html");
 $("#footer").load("footer.html");
 
 
-//Get the article content from the database and insert it in the artileCorps balise
+//Get the article content from the database and insert it in the articleCorps balise
 $.ajax({
     type: "GET",
     url: "http://localhost:8080/API/viewArticle/" + articleName,
@@ -49,7 +52,7 @@ viewComment();
 function myFunction() {
     var x = document.getElementById("menu");
     if (x.style.display === "none") {
-      x.style.display = "block";
+      x.style.display = "flex";
       $("#button_title").html("Hide");
     } else {
       x.style.display = "none";
@@ -58,7 +61,7 @@ function myFunction() {
 }
 
 
-//Get author et content values from the commetns form and save it int the database.
+//Get author et content values from the comments form and save it int the database.
 //A link between the article and the comment is made during the PostMapping.
 function commentValidation() {
     var inputValues = {
@@ -99,16 +102,7 @@ $.ajax({
 });
 }
 
-/*
-if (sessionStorage.permission == null || sessionStorage.permission>2) {
-    $("#noPermission").show();
-    setTimeout(function()
-    {
-        window.location.href = "index.html";
-    },3000);
-}
 
-else {
-    $("#noPermission").hide();
-}
-*/
+
+
+
