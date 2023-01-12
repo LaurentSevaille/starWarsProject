@@ -111,4 +111,11 @@ public class MainWebController {
         else
             return "OK";
     }
+
+    @PostMapping("/getID")
+    public User getID(@RequestBody String username)
+    {
+        User user = userRepositoryInterface.findFirstByUsername(username);
+        return user;
+    }
 }

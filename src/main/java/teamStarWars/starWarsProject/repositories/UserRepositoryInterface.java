@@ -7,6 +7,7 @@ public interface UserRepositoryInterface extends JpaRepositoryImplementation <Us
 
     User findById(int id);
     User findByUsername(String username);
+    User findFirstByUsername(String username);
     User findByAddress(String Address);
     int countByAddress(String Address);
     int countByUsername(String username);

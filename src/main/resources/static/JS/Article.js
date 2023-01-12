@@ -58,17 +58,33 @@ function myFunction() {
     }
 }
 
+//Get id author
+function getAuthor(user) {
+    let x;
+    $.ajax({
+        type: "POST",
+        headers: { "Content-Type": "application/json" },
+        url: "http://localhost:8080/API/getID",
+        data: user,
+        async:false,
+        success: function (response) {
+            x=response
+        }
+    });
+    return x;
+}
+
 
 //Get author et content values from the comments form and save it int the database.
 //A link between the article and the comment is made during the PostMapping.
-function commentValidation() {
+function commentValidation() {    
     let now = moment().format('YYYY/MM/DD HH:mm:ss');
+    let temp = getAuthor(sessionStorage.username);
         var inputValues = {
-        author: sessionStorage.username,
+        author: temp,
         content: $("#comContent").val(),
         commentDate: now
         };
-    console.log(JSON.stringify(inputValues));
     $.ajax({
         type: "POST",
         headers: { "Content-Type": "application/json" },
@@ -93,7 +109,7 @@ $.ajax({
 //        console.log(JSON.stringify(commentLength));
         for (let i = 0; i <= reponse.length-1; i++) {
             $("#commentList").append("<dt class='commentAuthor' id='commentAuthor" + i + "'></dt>");
-            $("#commentAuthor" + i).html(reponse[i].author);
+            $("#commentAuthor" + i).html(reponse[i].author['username']);
 
             $("#commentList").append("<dd class='commentDate' id='commentDate" + i + "'></dd>");
             $("#commentDate" + i).html(reponse[i].commentDate);
