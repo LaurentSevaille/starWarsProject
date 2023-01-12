@@ -22,7 +22,6 @@ $("head").append(
 $("#header").load("header.html");
 $("#footer").load("footer.html");
 
-
 //Get the article content from the database and insert it in the articleCorps balise
 $.ajax({
     type: "GET",
@@ -62,11 +61,10 @@ function myFunction() {
 //Get author et content values from the comments form and save it int the database.
 //A link between the article and the comment is made during the PostMapping.
 function commentValidation() {
-    let now = moment().format('YYYY/MM/DD HH:mm:ss');
         var inputValues = {
         author: sessionStorage.username,
         content: $("#comContent").val(),
-        commentDate: now
+        commentDate: moment().format('YYYY/MM/DD HH:mm:ss')
         };
     console.log(JSON.stringify(inputValues));
     $.ajax({
