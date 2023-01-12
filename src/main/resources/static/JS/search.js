@@ -11,9 +11,12 @@ $.ajax({
     type: "GET",
     url: "http://localhost:8080/API/research/" + researchArticleName,
     success: (reponse) => {
-        console.log(reponse),
-        console.log("name : " + reponse[0].name),
-        $("#reponse").html("<a href=Article.html?page=" + reponse[0].name + ">"+
+        console.log(reponse);
+        console.log("name : " + reponse[0].name);
+        let nomPage =  reponse[0].name;
+        nomPage =nomPage.replace(" ","%20");
+        console.log(nomPage);
+        $("#reponse").html("<a href=Article.html?page=" + nomPage + ">"+
             reponse[0].name + "</a>");
     }
 });

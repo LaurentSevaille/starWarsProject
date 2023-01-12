@@ -62,7 +62,7 @@ function myFunction() {
 //A link between the article and the comment is made during the PostMapping.
 function commentValidation() {
     var inputValues = {
-        author: $("#authorName").val(),
+        author: sessionStorage.username,
         content: $("#comContent").val()
     };
     console.log(JSON.stringify(inputValues));
@@ -73,7 +73,6 @@ function commentValidation() {
         url: "http://localhost:8080/API/addComment/" + articleName,
         data: JSON.stringify(inputValues),
         success: function (reponse) {
-            $("#authorName").val("");
             $("#comContent").val("");
             viewComment();
             alert(reponse);
