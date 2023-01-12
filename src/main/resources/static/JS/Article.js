@@ -96,16 +96,15 @@ $.ajax({
 //        console.log(JSON.stringify(reponse));
 //        console.log(JSON.stringify(commentLength));
         for (let i = 0; i <= reponse.length-1; i++) {
-            $("#commentList").append("<dt id='commentAuthor" + i + "'></dt>");
-            $("#commentAuthor" + i).html(reponse[i].author + " - published on " + reponse[i].commentDate);
-            $("#commentList").append("<dd id='commentContent" + i + "'></dd>");
+            $("#commentList").append("<dt class='commentAuthor' id='commentAuthor" + i + "'></dt>");
+            $("#commentAuthor" + i).html(reponse[i].author);
+
+            $("#commentList").append("<dd class='commentDate' id='commentDate" + i + "'></dd>");
+            $("#commentDate" + i).html(reponse[i].commentDate);
+
+            $("#commentList").append("<dd class='commentContent' id='commentContent" + i + "'></dd>");
             $("#commentContent" + i).html(reponse[i].content);
         }
     }
 });
 }
-
-
-
-
-

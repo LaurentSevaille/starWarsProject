@@ -13,4 +13,6 @@ public interface ArticleRepositoryInterface extends JpaRepositoryImplementation<
 
 
 
+
+
 }

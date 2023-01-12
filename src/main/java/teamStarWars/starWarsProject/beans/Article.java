@@ -19,7 +19,7 @@ public class Article {
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Comment> commentList = new ArrayList<>();
 
-    //METHODS
+//METHODS
 
     public void addCommentToArticle(Comment comment){
         commentList.add(comment);
