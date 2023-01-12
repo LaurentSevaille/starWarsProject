@@ -53,18 +53,19 @@ public class MainWebController {
         return articleList;
     }
 
-    @GetMapping("/viewComment/{articleName}")
-    public List<Comment> viewcomment(@PathVariable("articleName") String articleName){
-        List<Comment> comments = articleRepositoryInterface.findByName(articleName).getCommentList();
-        return comments;
-    }
-
     @PostMapping("/addComment/{articleName}")
     public String addComment(@PathVariable("articleName")String articleName, @RequestBody Comment comment) {
+        System.out.println("nouveau comment : " + comment);
         Article article = articleRepositoryInterface.findByName(articleName);
         article.addCommentToArticle(comment);
         articleRepositoryInterface.save(article);
         return "Thank you for your comment!";
+    }
+
+    @GetMapping("/viewComment/{articleName}")
+    public List<Comment> viewcomment(@PathVariable("articleName") String articleName){
+        List<Comment> comments = articleRepositoryInterface.findByName(articleName).getCommentList();
+        return comments;
     }
 
     @PostMapping("/getSessionValues/{username}/{password}")

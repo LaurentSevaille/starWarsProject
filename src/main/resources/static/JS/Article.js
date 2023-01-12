@@ -61,12 +61,15 @@ function myFunction() {
 //Get author et content values from the commetns form and save it int the database.
 //A link between the article and the comment is made during the PostMapping.
 function commentValidation() {
-    var inputValues = {
+    let now = moment().format('YYYY/MM/DD HH:mm:ss');
+    //let now = new Date().toISOString().slice(0, 19).replace('T', ' ');
+    //let now = new Date()
+        var inputValues = {
         author: sessionStorage.username,
-        content: $("#comContent").val()
-    };
+        content: $("#comContent").val(),
+        commentDate: now
+        };
     console.log(JSON.stringify(inputValues));
-
     $.ajax({
         type: "POST",
         headers: { "Content-Type": "application/json" },
@@ -91,7 +94,7 @@ $.ajax({
 //        console.log(JSON.stringify(commentLength));
         for (let i = 0; i <= reponse.length-1; i++) {
             $("#commentList").append("<dt id='commentAuthor" + i + "'></dt>");
-            $("#commentAuthor" + i).html(reponse[i].author);
+            $("#commentAuthor" + i).html(reponse[i].author + " - published on " + reponse[i].commentDate);
             $("#commentList").append("<dd id='commentContent" + i + "'></dd>");
             $("#commentContent" + i).html(reponse[i].content);
         }

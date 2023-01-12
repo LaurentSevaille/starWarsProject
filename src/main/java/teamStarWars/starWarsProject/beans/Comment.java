@@ -5,12 +5,13 @@ import jakarta.persistence.*;
 @Entity
 public class Comment {
 
-    //ATTRIBUTES
+//ATTRIBUTES
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int ID;
     private String author;
     private String content;
+    private String commentDate;
 
 
     //CONSTRUCTORS
@@ -21,8 +22,8 @@ public class Comment {
     public Comment(String author, String content) {
         this.author = author;
         this.content = content;
-
     }
+
 //GETTERS AND SETTERS
 
     public int getID() {
@@ -44,8 +45,14 @@ public class Comment {
         this.author = author;
     }
 
+    public String getCommentDate() {
+        return commentDate;
+    }
 
-    //OVERRIDE
+    public void setCommentDate(String commentDate) {
+        this.commentDate = commentDate;
+    }
+//OVERRIDE
 
     @Override
     public String toString() {
@@ -53,6 +60,7 @@ public class Comment {
                 "ID=" + ID +
                 ", author='" + author + '\'' +
                 ", content='" + content + '\'' +
+                ", commentDate='" + commentDate + '\'' +
                 '}';
     }
 }
