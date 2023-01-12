@@ -20,11 +20,6 @@ $("head").append(
     <link rel='icon' type='image/png' href='img/Star-Wars-Logo.png'/>"
     );
 
-if (sessionStorage.permission<3) { 
-    $("#modifyArticle").html(
-        "<a href='./modifyArticle.html?page=" + articleName + "'>Modify article</a>"
-    );
-}
 
 $("#header").load("header.html");
 $("#footer").load("footer.html");
@@ -36,6 +31,11 @@ $.ajax({
     url: "http://localhost:8080/API/viewArticle/" + articleName,
     success: (reponse) => {
         $("#article").html(reponse);
+        if (sessionStorage.permission<3) { 
+            $("#modifyArticle").html(
+                "<a href='./modifyArticle.html?page=" + articleName + "'>Modify article</a>"
+            );
+        }
     }
 });
 
