@@ -2,6 +2,9 @@ package teamStarWars.starWarsProject.beans;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 public class Comment {
 
@@ -9,7 +12,8 @@ public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int ID;
-    private String author;
+    @ManyToOne(fetch = FetchType.EAGER)
+    private User author;
     private String content;
     private String commentDate;
 
@@ -19,9 +23,10 @@ public class Comment {
     public Comment() {
     }
 
-    public Comment(String author, String content) {
+    public Comment(User author, String content, String commentDate) {
         this.author = author;
         this.content = content;
+        this.commentDate = commentDate;
     }
 
 //GETTERS AND SETTERS
@@ -38,10 +43,10 @@ public class Comment {
     public void setContent(String content) {
         this.content = content;
     }
-    public String getAuthor() {
+    public User getAuthor() {
         return author;
     }
-    public void setAuthor(String author) {
+    public void setAuthor(User author) {
         this.author = author;
     }
 
