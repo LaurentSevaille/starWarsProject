@@ -57,13 +57,13 @@ function myFunction() {
     }
 }
 
-//Get id author
+//Get author
 function getAuthor(user) {
     let x;
     $.ajax({
         type: "POST",
         headers: { "Content-Type": "application/json" },
-        url: "http://localhost:8080/API/getID",
+        url: "http://localhost:8080/API/getUser",
         data: user,
         async:false,
         success: function (response) {

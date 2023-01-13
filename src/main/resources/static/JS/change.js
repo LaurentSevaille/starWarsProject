@@ -1,10 +1,13 @@
-if(sessionStorage.username == null)
+if(sessionStorage.username != null)
 {
+    currentUser = getUser(sessionStorage.username);
     $('#POSTBUTTON').click(function()
     {
         let values = {username: $("#username").val(), password: $("#password").val(), confirmpassword: $("#confirmpassword").val(), email: $("#email").val()};
         let existAddress;
         let existUser;
+
+
 
         if(values["password"] == values["confirmpassword"])
         {
@@ -36,40 +39,43 @@ if(sessionStorage.username == null)
                         existUser=response;
                     }
                 });
-    
 
-            if(existAddress=="OK" && existUser=="OK" && validateEmail($("#email").val()))
+            if((existAddress=="OK" && existUser=="OK")
+            || (currentUser["address"] == values["email"] && existUser=="OK")
+            || (currentUser["username"] == values["username"] && existAddress=="OK")
+            || (currentUser["address"] == values["email"] && currentUser["username"] == values["username"])
+            && validateEmail($("#email").val()))
             {
 
                 $('#spanuser1').css("color", "");
-                $('#spanemail1').css("color", "");
+                $('#spanuser2').css("color", "");
 
-                $.ajax(
-                {
-                type: "POST",
-                headers: {"Content-Type": "application/json"},
-                url: "http://localhost:8080/API/registerUser/"+ values["username"] + "/" + values["password"] + "/" + values["email"],
-                data: JSON.stringify(values),
-                success: (response)=>
-                    {
+                $.ajax({
+                    type: "PUT",
+                    headers: { "Content-Type": "application/json" },
+                    url: "http://localhost:8080/API/updateUser/"+ currentUser["username"] + "/" + values["username"] + "/" + values["password"] + "/" + values["email"],
+                    data: JSON.stringify(values),
+                    success: function (response) {
                         $('#registerMenu').hide();
                         alert("API got : "+response);
     
                         if(response == "OK")
                         {
+                            sessionStorage.username = values["username"];
                             $('#result').html
                             (
-                                "<p>Success ! You will be redirected to the login page</p>"
+                                "<p>Success ! You will be redirected to the main page</p>"
                             );
         
                             setTimeout(function()
                             {
-                                window.location.href = "login.html";
+                                window.location.href = "index.html";
                             },3000);
                         }
     
                     }
                 });
+
             }
 
             else
@@ -151,7 +157,7 @@ else
     $('#registerMenu').hide();
     $('#result').html
     (
-        "<p>You are already connected. Redirecting to main page.</p>"
+        "<p>You are not logged in. Redirecting to main page.</p>"
     );
 
     setTimeout(function()
@@ -172,3 +178,24 @@ $(document).on('keypress',function(e) {
         $('#POSTBUTTON').click();
     }
 });
+
+
+//Get author
+function getUser(user) {
+    let x;
+    $.ajax({
+        type: "POST",
+        headers: { "Content-Type": "application/json" },
+        url: "http://localhost:8080/API/getUser",
+        async:false,
+        data: user,
+        success: function (response) {
+            x=response
+            $("#username").val(x.username);
+            $("#email").val(x.address);
+            $("#password").val(x.password);
+            $("#confirmpassword").val(x.password);
+        }
+    });
+    return x;
+}

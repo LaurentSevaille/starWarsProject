@@ -112,10 +112,21 @@ public class MainWebController {
             return "OK";
     }
 
-    @PostMapping("/getID")
-    public User getID(@RequestBody String username)
+    @PostMapping("/getUser")
+    public User getUser(@RequestBody String username)
     {
         User user = userRepositoryInterface.findFirstByUsername(username);
         return user;
+    }
+
+
+    @PutMapping("/updateUser/{oldusername}/{username}/{password}/{address}")
+    public String updateUser(@PathVariable("oldusername") String oldusername, @PathVariable("username") String username, @PathVariable("password") String password, @PathVariable("address") String address){
+        User updateUser = userRepositoryInterface.findFirstByUsername(oldusername);
+        updateUser.setUsername(username);
+        updateUser.setPassword(password);
+        updateUser.setAddress(address);
+        userRepositoryInterface.save(updateUser);
+        return "OK";
     }
 }
