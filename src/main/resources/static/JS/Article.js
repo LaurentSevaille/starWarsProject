@@ -2,11 +2,11 @@
 
 //get the parameters of th URL
 const urlParams = new URLSearchParams(window.location.search);
-console.log("url parms : " + urlParams);
+//console.log("url parms : " + urlParams);
 
 //Get the value of the paramettre "page"
 const articleName = urlParams.get("page");
-console.log("articleName : " + articleName);
+//console.log("articleName : " + articleName);
 
 //ARTICLE IMPORTS
 
