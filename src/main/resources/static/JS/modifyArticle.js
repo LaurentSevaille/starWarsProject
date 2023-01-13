@@ -23,6 +23,10 @@ if(document.referrer != "" && sessionStorage.permission<3)
         }
     });
 
+    $('#cancelButton').click(function () {
+        window.location.href = "Article.html?page=" + articleName;
+    });
+
     $('#validationButton').click(function () {
         let valeurs = {
             name: $("#name").val(),
