@@ -20,6 +20,14 @@ a:hover {
     color: #ccad85;
 }
 
+a:visited {
+    color: #5e5141;
+}
+
+a:visited:hover{
+    color: #ccad85;
+}
+
 section div {
     text-align: left;
 }
