@@ -53,6 +53,17 @@ public class MainWebController {
         return articleList;
     }
 
+    @GetMapping("/exactresearch/{researchArticleName}")
+    public String exactreserachArticle(@PathVariable("researchArticleName") String exactResearchArticleName) {
+        if (articleRepositoryInterface.findByName(exactResearchArticleName) != null) {
+            Article exactresearchArticle = articleRepositoryInterface.findByName(exactResearchArticleName);
+            String articleName = exactresearchArticle.getName();
+            return articleName;
+        } else {
+            return "";
+        }
+    }
+
     @PostMapping("/addComment/{articleName}")
     public String addComment(@PathVariable("articleName")String articleName, @RequestBody Comment comment) {
         System.out.println("nouveau comment : " + comment);
