@@ -21,6 +21,7 @@
                             <li><a class="dropdown-item" id="loginNav" href="./login.html">Log in</a></li>
                             <li><a class="dropdown-item" id="registerNav" href="./register.html">Sign up</a></li>
                             <li><a class="dropdown-item" id="logoutNav" href="./logout.html">Log out</a></li>
+                            <li><a class="dropdown-item" id="changeNav" href="./change.html">Change User info</a></li>
                         </ul>
                     </li>
                     <li class="nav-item" id="addArticleNav">
@@ -43,6 +44,7 @@
             $("#loginNav").show();
             $("#registerNav").show();
             $("#logoutNav").hide();
+            $("#changeNav").hide();
 
             $("#loginout").html("Log in / Sign up");
         }
@@ -51,8 +53,9 @@
             $("#loginNav").hide();
             $("#registerNav").hide();
             $("#logoutNav").show();
+            $("#changeNav").show();
 
-            $("#loginout").html("Log out");
+            $("#loginout").html("Log out/Change name");
         }
 
         if (sessionStorage.permission <= 2) {

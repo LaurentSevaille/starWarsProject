@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="CSS/log.css" />
+    <link rel="icon" type="image/png" href="img/Star-Wars-Logo.png" />
+    <title>Update</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <script>
+        $(function () {
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
+        });
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <div id="header"></div>
+    </header>
+
+    <div class="container">
+        <div class="body d-md-flex align-items-center justify-content-between">
+            <div class="box-1 mt-md-0 mt-5">
+                <img src="./IMG/logout.jpg" class="" alt="">
+            </div>
+            <div class=" box-2 d-flex flex-column h-100">
+                <div class="mt-5" id=registerMenu>
+
+                    <p class="mb-1 h-1">Update. <br></p>
+
+                    <div class="d-flex flex-column ">
+
+                        <span id=spanuser1>New Username : <input type="text" id="username"
+                            placeholder="new username" size="20"></span> 
+                        <span id=spanuser2></span>
+
+                        <span id=spanemail1>New E-mail address : <input type="email" id="email"
+                            placeholder="new E-mail" size="20"></span> 
+                        <span id=spanemail2></span>
+
+                        <span>New Password : <input type="password" id="password" placeholder="new Password" size="20"></span>
+
+                        <span id=spanconfirm1>Confirm new password : <input type="password" id="confirmpassword"
+                            placeholder="Confirm new password" size="20"></span> 
+                        <span id=spanconfirm2></span>
+
+                        <button id="POSTBUTTON" class="btn btn-dark w-100"><span
+                                id="spanPOSTBUTTON">Update</span></button>
+
+                        <div class="mt-3">
+                            <p class="mb-0 text-muted">Already have account ? </p>
+                            <div class="btn btn-primary"><a href="./login.html">Login</a><span
+                                    class="fas fa-chevron-right ms-1"></span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id=result></div>
+
+                <div class="mt-auto">
+                    <p class="footer text-muted mb-0 mt-md-0 mt-4">By register you agree with our
+                        <span class="p-color me-1">terms and conditions</span>and
+                        <span class="p-color ms-1">privacy policy</span>
+                    </p>
+                </div>
+            </div>
+            <span class="fas fa-times"></span>
+        </div>
+    </div>
+
+    <footer>
+        <div id="footer"></div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+    <script
+        src="https://cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.3.7/dist/latest/bootstrap-autocomplete.min.js"></script>
+
+    <script src=' http://code.jquery.com/jquery.min.js '></script>
+    <script type="text/javascript" src="JS/change.js"></script>
+</body>
+
+</html>
